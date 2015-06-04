@@ -3,8 +3,7 @@
 <Monster_List xmlns="http://www.w3schools.com"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://www.w3schools.com Monster_List.xsd">
-  <Monster>
-    <Type>Ape</Type>
+  <Monster Type="Ape">
     <Challenge>0.5</Challenge>
     <Size>Medium</Size>
     <Appearance>Beast</Appearance>
