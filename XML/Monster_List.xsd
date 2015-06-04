@@ -9,6 +9,7 @@
 			  <xs:element type="xs:string" name="Challenge"/>
               <xs:element type="xs:string" name="Size"/>
               <xs:element type="xs:string" name="Appearance"/>
+			  <xs:element type="xs:string" name="Race" minOccurs="0"/>
               <xs:element type="xs:string" name="Alignment"/>
               <xs:element type="xs:string" name="ArmorClass"/>
               <xs:element type="xs:string" name="MinHP"/>
@@ -27,28 +28,29 @@
               <xs:element name="Senses" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="Sense" minOccurs="0" maxOccurs="5"/>
+                    <xs:element type="xs:string" name="Sense" minOccurs="0" maxOccurs="10"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="Actions">
+              <xs:element name="Actions" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element type="xs:string" name="Action" minOccurs="0" maxOccurs="10"/>
+					<xs:element type="xs:string" name="LegendaryAction" minOccurs="0" maxOccurs="10"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
               <xs:element name="Abilities" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="Ability" minOccurs="0" maxOccurs="5"/>
+                    <xs:element type="xs:string" name="Ability" minOccurs="0" maxOccurs="10"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
               <xs:element name="Skills" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
-                    <xs:element type="xs:string" name="Skill" minOccurs="0" maxOccurs="5"/>
+                    <xs:element type="xs:string" name="Skill" minOccurs="0" maxOccurs="10"/>
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
