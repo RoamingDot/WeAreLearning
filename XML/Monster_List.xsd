@@ -2,10 +2,9 @@
   <xs:element name="Monster_List">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="Monster">
+        <xs:element name="Monster" maxOccurs="500">	
           <xs:complexType>
             <xs:sequence>
-              <xs:element type="xs:string" name="Type"/>
 			  <xs:element type="xs:string" name="Challenge"/>
               <xs:element type="xs:string" name="Size"/>
               <xs:element type="xs:string" name="Appearance"/>
@@ -55,6 +54,7 @@
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
+		    <xs:attribute name="Type" type="xs:string" use="required"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
