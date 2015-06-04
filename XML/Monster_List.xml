@@ -7,7 +7,7 @@ xsi:schemaLocation="http://www.w3schools.com Monster_schema.xml">
     <Type>Ape</Type>
     <Challenge>0.5</Challenge>
     <Size>Medium</Size>
-    <Class>Beast</Class>
+    <Appearance>Beast</Appearance>
     <Alignment>Unaligned</Alignment>
     <ArmorClass>12</ArmorClass>
     <MinHP>9</MinHP>
@@ -19,10 +19,6 @@ xsi:schemaLocation="http://www.w3schools.com Monster_schema.xml">
     <Intelligence>6</Intelligence>
     <Wisdom>12</Wisdom>
     <Charisma>7</Charisma>
-    <DamageVulnerability xsi:nil="true"/>
-    <DamageResistance xsi:nil="true"/>
-    <Languages xsi:nil="true"/>
-    <Description></Description>
     <Senses>
       <Sense>passive Perception 13</Sense>
     </Senses>
@@ -31,7 +27,6 @@ xsi:schemaLocation="http://www.w3schools.com Monster_schema.xml">
 	  <Action>Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.</Action>
 	  <Action>Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage.</Action>
     </Actions>
-    <Abilities xsi:nil="true"/>
     <Skills>
       <Skill>Athletics +5</Skill>
     </Skills>

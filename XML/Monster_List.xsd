@@ -8,7 +8,7 @@
               <xs:element type="xs:string" name="Type"/>
 			  <xs:element type="xs:string" name="Challenge"/>
               <xs:element type="xs:string" name="Size"/>
-              <xs:element type="xs:string" name="Class"/>
+              <xs:element type="xs:string" name="Appearance"/>
               <xs:element type="xs:string" name="Alignment"/>
               <xs:element type="xs:string" name="ArmorClass"/>
               <xs:element type="xs:string" name="MinHP"/>
