@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Monster_List xmlns="http://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.w3schools.com Monster_schema.xml">
+  <Monster>
+    <Type>Ape</Type>
+    <Challenge>0.5</Challenge>
+    <Size>Medium</Size>
+    <Class>Beast</Class>
+    <Alignment>Unaligned</Alignment>
+    <ArmorClass>12</ArmorClass>
+    <MinHP>9</MinHP>
+    <MaxHP>30</MaxHP>
+    <Speed>30</Speed>
+    <Strength>16</Strength>
+    <Dexterity>14</Dexterity>
+    <Constitution>14</Constitution>
+    <Intelligence>6</Intelligence>
+    <Wisdom>12</Wisdom>
+    <Charisma>7</Charisma>
+    <DamageVulnerability xsi:nil="true"/>
+    <DamageResistance xsi:nil="true"/>
+    <Languages xsi:nil="true"/>
+    <Description></Description>
+    <Senses>
+      <Sense>passive Perception 13</Sense>
+    </Senses>
+    <Actions>
+      <Action>Multiattack. The ape makes two fist attacks.</Action>
+	  <Action>Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.</Action>
+	  <Action>Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage.</Action>
+    </Actions>
+    <Abilities xsi:nil="true"/>
+    <Skills>
+      <Skill>Athletics +5</Skill>
+    </Skills>
+  </Monster>
+</Monster_List>
