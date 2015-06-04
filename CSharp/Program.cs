@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace DeeEnDee
 {
@@ -11,17 +10,14 @@ namespace DeeEnDee
     {
         static int Main(string[] args)
         {
-            XmlDocument doc = new XmlDocument();
-            //doc.PreserveWhitespace = true;
-            try { doc.Load("Monster_List.xml"); }
-            catch (System.IO.FileNotFoundException)
-            {
-                Console.WriteLine("Failed to load Monster_List.xml");
-                return 0;
-            }
+            XElement root = XElement.Load("Monster_List.xml");
 
-            XmlElement elem = doc.GetElementById("Ape");
-            Console.WriteLine(elem.OuterXml);
+            IEnumerable<XElement> elem = from el in root.Elements("Monster")
+                                         where (string)el.Attribute("Type") == "Ape"
+                                         select el;
+            
+            foreach (XElement el in elem)
+            Console.WriteLine(el);
 
             return 0;
         }
