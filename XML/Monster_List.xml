@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<Monster_List xmlns="http://www.w3schools.com"
+<Monster_List xmlns="MSP"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.w3schools.com Monster_List.xsd">
+xsi:schemaLocation="MSP Monster_List.xsd">
   <Monster Type="Ape">
     <Challenge>0.5</Challenge>
     <Size>Medium</Size>

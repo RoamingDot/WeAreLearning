@@ -1,4 +1,4 @@
-<xs:schema attributeFormDefault="unqualified" targetNamespace="http://www.w3schools.com" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema attributeFormDefault="unqualified" targetNamespace="MSP" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="Monster_List">
     <xs:complexType>
       <xs:sequence>
