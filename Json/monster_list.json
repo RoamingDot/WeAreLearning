@@ -1,58 +1,60 @@
-{
-  "Monster": {
-    "Type": "Ape",
-    "Challenge": "0.5",
-    "Size": "Medium",
-    "Appearance": "Beast",
-    "Alignment": "Unaligned",
-    "ArmorClass": "12",
-    "MinHP": "9",
-    "MaxHP": "30",
-    "Speed": "30",
-    "Strength": "16",
-    "Dexterity": "14",
-    "Constitution": "14",
-    "Intelligence": "6",
-    "Wisdom": "12",
-    "Charisma": "7",
-    "Senses": [
-      "passive Perception 13"
-    ],
-    "Actions": [
-      "Multiattack. The ape makes two fist attacks.",
-      "Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.",
-      "Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage."
-    ],
-    "Skills": [
-      "Athletics +5"
+{"Monster": 
+    [
+        {
+            "Type": "Ape",
+            "Challenge": "0.5",
+            "Size": "Medium",
+            "Appearance": "Beast",
+            "Alignment": "Unaligned",
+            "ArmorClass": "12",
+            "MinHP": "9",
+            "MaxHP": "30",
+            "Speed": "30",
+            "Strength": "16",
+            "Dexterity": "14",
+            "Constitution": "14",
+            "Intelligence": "6",
+            "Wisdom": "12",
+            "Charisma": "7",
+            "Senses": [
+                "passive Perception 13"
+            ],
+            "Actions": [
+                "Multiattack. The ape makes two fist attacks.",
+                "Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.",
+                "Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage."
+            ],
+            "Skills": [
+                "Athletics +5"
+            ]
+        },
+        {
+            "Type": "Ape2",
+            "Challenge": "1",
+            "Size": "Medium",
+            "Appearance": "Beast",
+            "Alignment": "Unaligned",
+            "ArmorClass": "12",
+            "MinHP": "9",
+            "MaxHP": "30",
+            "Speed": "30",
+            "Strength": "16",
+            "Dexterity": "14",
+            "Constitution": "14",
+            "Intelligence": "6",
+            "Wisdom": "12",
+            "Charisma": "7",
+            "Senses": [
+                "passive Perception 13"
+            ],
+            "Actions": [
+                "Multiattack. The ape makes two fist attacks.",
+                "Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.",
+                "Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage."
+            ],
+            "Skills": [
+                "Athletics +5"
+            ]
+        }
     ]
-  }
-    "Monster": {
-    "Type": "Ape2",
-    "Challenge": "1",
-    "Size": "Medium",
-    "Appearance": "Beast",
-    "Alignment": "Unaligned",
-    "ArmorClass": "12",
-    "MinHP": "9",
-    "MaxHP": "30",
-    "Speed": "30",
-    "Strength": "16",
-    "Dexterity": "14",
-    "Constitution": "14",
-    "Intelligence": "6",
-    "Wisdom": "12",
-    "Charisma": "7",
-    "Senses": [
-      "passive Perception 13"
-    ],
-    "Actions": [
-      "Multiattack. The ape makes two fist attacks.",
-      "Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.",
-      "Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage."
-    ],
-    "Skills": [
-      "Athletics +5"
-    ]
-  }
 }
