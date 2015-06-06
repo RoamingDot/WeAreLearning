@@ -21,8 +21,6 @@ namespace jsonmaker
             InitializeComponent();
         }
 
-        string jsonPath;
-        string jsonFileName;
         RootObject monsterList;
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,8 +35,6 @@ namespace jsonmaker
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                jsonPath = Path.GetDirectoryName(openFileDialog1.FileName);
-                jsonFileName = openFileDialog1.FileName;
                 try
                 {
                     monsterList = JsonConvert.DeserializeObject<RootObject>(File.ReadAllText
@@ -76,6 +72,11 @@ namespace jsonmaker
                     textBox1.Text = json;
                 }
             }
+        }
+
+        private void Navigation_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
