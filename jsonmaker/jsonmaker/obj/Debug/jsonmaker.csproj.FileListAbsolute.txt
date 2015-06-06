@@ -26,3 +26,11 @@ C:\Users\Chris\Documents\DND5e\GitHub\WeAreLearning\jsonmaker\jsonmaker\obj\Debu
 C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\bin\Debug\jsonmaker.exe.config
 C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.exe
 C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.pdb
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\bin\Debug\jsonmaker.exe
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\bin\Debug\jsonmaker.pdb
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.Navigation.resources
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.Properties.Resources.resources
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.csproj.GenerateResource.Cache
