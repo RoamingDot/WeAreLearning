@@ -23,3 +23,6 @@ D:\Visual Studio 2013\Projects\jsonmaker\jsonmaker\obj\Debug\jsonmaker.csproj.Ge
 C:\Users\Chris\Documents\DND5e\GitHub\WeAreLearning\jsonmaker\jsonmaker\bin\Debug\jsonmaker.exe.config
 C:\Users\Chris\Documents\DND5e\GitHub\WeAreLearning\jsonmaker\jsonmaker\obj\Debug\jsonmaker.exe
 C:\Users\Chris\Documents\DND5e\GitHub\WeAreLearning\jsonmaker\jsonmaker\obj\Debug\jsonmaker.pdb
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\bin\Debug\jsonmaker.exe.config
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.exe
+C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.pdb
