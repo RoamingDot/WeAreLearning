@@ -34,3 +34,6 @@ C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.csp
 C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.Navigation.resources
 C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.Properties.Resources.resources
 C:\Users\Chris\Documents\DND5e\test3\jsonmaker\jsonmaker\obj\Debug\jsonmaker.csproj.GenerateResource.Cache
+C:\Users\William\Documents\GitHub\WeAreLearning\jsonmaker\jsonmaker\bin\Debug\jsonmaker.exe.config
+C:\Users\William\Documents\GitHub\WeAreLearning\jsonmaker\jsonmaker\obj\Debug\jsonmaker.exe
+C:\Users\William\Documents\GitHub\WeAreLearning\jsonmaker\jsonmaker\obj\Debug\jsonmaker.pdb
