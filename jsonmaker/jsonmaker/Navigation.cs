@@ -43,6 +43,7 @@ namespace jsonmaker
                 {
                     monsterList = JsonConvert.DeserializeObject<RootObject>(File.ReadAllText
                         (Path.GetFullPath(openFileDialog1.FileName)));
+                    FileLocation1.Text = Path.GetFullPath(openFileDialog1.FileName) + " was loaded.";
                 }
                 catch (Exception ex)
                 {
@@ -51,9 +52,15 @@ namespace jsonmaker
             }
 
 
-            foreach(Monster mon in monsterList.Monster)
-                    MessageBox.Show(mon.Type);
-            label1.Text = monsterList.Monster[0].MaxHP + " ___ " + monsterList.Monster[1].Alignment;
+        }
+
+        private void dataButton_Click(object sender, EventArgs e)
+        {
+            string json = JsonConvert.SerializeObject(monsterList, Formatting.Indented);
+            dataLabel.Text = json;
+
+            monsterBox.DataSource = monsterList.Monster;
+
         }
     }
 
