@@ -140,6 +140,8 @@
             this.damImmBox1 = new System.Windows.Forms.TextBox();
             this.languageBox = new System.Windows.Forms.CheckedListBox();
             this.statBox = new System.Windows.Forms.GroupBox();
+            this.speedBox = new System.Windows.Forms.TextBox();
+            this.armorBox = new System.Windows.Forms.TextBox();
             this.speedLabel = new System.Windows.Forms.Label();
             this.armorLbl = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -153,8 +155,6 @@
             this.pgLbl = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.chalLbl = new System.Windows.Forms.Label();
-            this.armorBox = new System.Windows.Forms.TextBox();
-            this.speedBox = new System.Windows.Forms.TextBox();
             this.groupSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.surviInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stealInput)).BeginInit();
@@ -1003,7 +1003,7 @@
             this.abilPage1.Location = new System.Drawing.Point(4, 22);
             this.abilPage1.Name = "abilPage1";
             this.abilPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.abilPage1.Size = new System.Drawing.Size(584, 269);
+            this.abilPage1.Size = new System.Drawing.Size(580, 269);
             this.abilPage1.TabIndex = 0;
             this.abilPage1.Text = "Abilities";
             this.abilPage1.UseVisualStyleBackColor = true;
@@ -1013,7 +1013,7 @@
             this.abiliBox4.Location = new System.Drawing.Point(19, 122);
             this.abiliBox4.MinimumSize = new System.Drawing.Size(330, 25);
             this.abiliBox4.Name = "abiliBox4";
-            this.abiliBox4.Size = new System.Drawing.Size(546, 25);
+            this.abiliBox4.Size = new System.Drawing.Size(546, 20);
             this.abiliBox4.TabIndex = 58;
             // 
             // abiliBox1
@@ -1021,7 +1021,7 @@
             this.abiliBox1.Location = new System.Drawing.Point(19, 23);
             this.abiliBox1.MinimumSize = new System.Drawing.Size(330, 25);
             this.abiliBox1.Name = "abiliBox1";
-            this.abiliBox1.Size = new System.Drawing.Size(546, 25);
+            this.abiliBox1.Size = new System.Drawing.Size(546, 20);
             this.abiliBox1.TabIndex = 55;
             // 
             // abiliBox2
@@ -1029,7 +1029,7 @@
             this.abiliBox2.Location = new System.Drawing.Point(19, 56);
             this.abiliBox2.MinimumSize = new System.Drawing.Size(330, 25);
             this.abiliBox2.Name = "abiliBox2";
-            this.abiliBox2.Size = new System.Drawing.Size(546, 25);
+            this.abiliBox2.Size = new System.Drawing.Size(546, 20);
             this.abiliBox2.TabIndex = 56;
             // 
             // abiliBox3
@@ -1037,7 +1037,7 @@
             this.abiliBox3.Location = new System.Drawing.Point(19, 89);
             this.abiliBox3.MinimumSize = new System.Drawing.Size(330, 25);
             this.abiliBox3.Name = "abiliBox3";
-            this.abiliBox3.Size = new System.Drawing.Size(546, 25);
+            this.abiliBox3.Size = new System.Drawing.Size(546, 20);
             this.abiliBox3.TabIndex = 57;
             // 
             // abiliBox6
@@ -1045,7 +1045,7 @@
             this.abiliBox6.Location = new System.Drawing.Point(19, 188);
             this.abiliBox6.MinimumSize = new System.Drawing.Size(330, 25);
             this.abiliBox6.Name = "abiliBox6";
-            this.abiliBox6.Size = new System.Drawing.Size(546, 25);
+            this.abiliBox6.Size = new System.Drawing.Size(546, 20);
             this.abiliBox6.TabIndex = 60;
             // 
             // abiliBox5
@@ -1053,7 +1053,7 @@
             this.abiliBox5.Location = new System.Drawing.Point(19, 155);
             this.abiliBox5.MinimumSize = new System.Drawing.Size(330, 25);
             this.abiliBox5.Name = "abiliBox5";
-            this.abiliBox5.Size = new System.Drawing.Size(546, 25);
+            this.abiliBox5.Size = new System.Drawing.Size(546, 20);
             this.abiliBox5.TabIndex = 59;
             // 
             // abiliBox7
@@ -1061,7 +1061,7 @@
             this.abiliBox7.Location = new System.Drawing.Point(19, 221);
             this.abiliBox7.MinimumSize = new System.Drawing.Size(330, 25);
             this.abiliBox7.Name = "abiliBox7";
-            this.abiliBox7.Size = new System.Drawing.Size(546, 25);
+            this.abiliBox7.Size = new System.Drawing.Size(546, 20);
             this.abiliBox7.TabIndex = 54;
             // 
             // actionPage1
@@ -1076,7 +1076,7 @@
             this.actionPage1.Location = new System.Drawing.Point(4, 22);
             this.actionPage1.Name = "actionPage1";
             this.actionPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.actionPage1.Size = new System.Drawing.Size(584, 269);
+            this.actionPage1.Size = new System.Drawing.Size(580, 269);
             this.actionPage1.TabIndex = 2;
             this.actionPage1.Text = "Actions";
             this.actionPage1.UseVisualStyleBackColor = true;
@@ -1086,7 +1086,7 @@
             this.actioBox4.Location = new System.Drawing.Point(19, 122);
             this.actioBox4.MinimumSize = new System.Drawing.Size(330, 25);
             this.actioBox4.Name = "actioBox4";
-            this.actioBox4.Size = new System.Drawing.Size(546, 25);
+            this.actioBox4.Size = new System.Drawing.Size(546, 20);
             this.actioBox4.TabIndex = 58;
             // 
             // actioBox1
@@ -1094,7 +1094,7 @@
             this.actioBox1.Location = new System.Drawing.Point(19, 23);
             this.actioBox1.MinimumSize = new System.Drawing.Size(330, 25);
             this.actioBox1.Name = "actioBox1";
-            this.actioBox1.Size = new System.Drawing.Size(546, 25);
+            this.actioBox1.Size = new System.Drawing.Size(546, 20);
             this.actioBox1.TabIndex = 55;
             // 
             // actioBox2
@@ -1102,7 +1102,7 @@
             this.actioBox2.Location = new System.Drawing.Point(19, 56);
             this.actioBox2.MinimumSize = new System.Drawing.Size(330, 25);
             this.actioBox2.Name = "actioBox2";
-            this.actioBox2.Size = new System.Drawing.Size(546, 25);
+            this.actioBox2.Size = new System.Drawing.Size(546, 20);
             this.actioBox2.TabIndex = 56;
             // 
             // actioBox3
@@ -1110,7 +1110,7 @@
             this.actioBox3.Location = new System.Drawing.Point(19, 89);
             this.actioBox3.MinimumSize = new System.Drawing.Size(330, 25);
             this.actioBox3.Name = "actioBox3";
-            this.actioBox3.Size = new System.Drawing.Size(546, 25);
+            this.actioBox3.Size = new System.Drawing.Size(546, 20);
             this.actioBox3.TabIndex = 57;
             // 
             // actioBox6
@@ -1118,7 +1118,7 @@
             this.actioBox6.Location = new System.Drawing.Point(19, 188);
             this.actioBox6.MinimumSize = new System.Drawing.Size(330, 25);
             this.actioBox6.Name = "actioBox6";
-            this.actioBox6.Size = new System.Drawing.Size(546, 25);
+            this.actioBox6.Size = new System.Drawing.Size(546, 20);
             this.actioBox6.TabIndex = 60;
             // 
             // actioBox5
@@ -1126,7 +1126,7 @@
             this.actioBox5.Location = new System.Drawing.Point(19, 155);
             this.actioBox5.MinimumSize = new System.Drawing.Size(330, 25);
             this.actioBox5.Name = "actioBox5";
-            this.actioBox5.Size = new System.Drawing.Size(546, 25);
+            this.actioBox5.Size = new System.Drawing.Size(546, 20);
             this.actioBox5.TabIndex = 59;
             // 
             // actioBox7
@@ -1134,7 +1134,7 @@
             this.actioBox7.Location = new System.Drawing.Point(19, 221);
             this.actioBox7.MinimumSize = new System.Drawing.Size(330, 25);
             this.actioBox7.Name = "actioBox7";
-            this.actioBox7.Size = new System.Drawing.Size(546, 25);
+            this.actioBox7.Size = new System.Drawing.Size(546, 20);
             this.actioBox7.TabIndex = 54;
             // 
             // legendPage1
@@ -1149,7 +1149,7 @@
             this.legendPage1.Location = new System.Drawing.Point(4, 22);
             this.legendPage1.Name = "legendPage1";
             this.legendPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.legendPage1.Size = new System.Drawing.Size(584, 269);
+            this.legendPage1.Size = new System.Drawing.Size(580, 269);
             this.legendPage1.TabIndex = 1;
             this.legendPage1.Text = "Legendary Actions";
             this.legendPage1.UseVisualStyleBackColor = true;
@@ -1159,7 +1159,7 @@
             this.legenBox4.Location = new System.Drawing.Point(19, 122);
             this.legenBox4.MinimumSize = new System.Drawing.Size(330, 25);
             this.legenBox4.Name = "legenBox4";
-            this.legenBox4.Size = new System.Drawing.Size(546, 25);
+            this.legenBox4.Size = new System.Drawing.Size(546, 20);
             this.legenBox4.TabIndex = 58;
             // 
             // legenBox1
@@ -1167,7 +1167,7 @@
             this.legenBox1.Location = new System.Drawing.Point(19, 23);
             this.legenBox1.MinimumSize = new System.Drawing.Size(330, 25);
             this.legenBox1.Name = "legenBox1";
-            this.legenBox1.Size = new System.Drawing.Size(546, 25);
+            this.legenBox1.Size = new System.Drawing.Size(546, 20);
             this.legenBox1.TabIndex = 55;
             // 
             // legenBox2
@@ -1175,7 +1175,7 @@
             this.legenBox2.Location = new System.Drawing.Point(19, 56);
             this.legenBox2.MinimumSize = new System.Drawing.Size(330, 25);
             this.legenBox2.Name = "legenBox2";
-            this.legenBox2.Size = new System.Drawing.Size(546, 25);
+            this.legenBox2.Size = new System.Drawing.Size(546, 20);
             this.legenBox2.TabIndex = 56;
             // 
             // legenBox3
@@ -1183,7 +1183,7 @@
             this.legenBox3.Location = new System.Drawing.Point(19, 89);
             this.legenBox3.MinimumSize = new System.Drawing.Size(330, 25);
             this.legenBox3.Name = "legenBox3";
-            this.legenBox3.Size = new System.Drawing.Size(546, 25);
+            this.legenBox3.Size = new System.Drawing.Size(546, 20);
             this.legenBox3.TabIndex = 57;
             // 
             // legenBox6
@@ -1191,7 +1191,7 @@
             this.legenBox6.Location = new System.Drawing.Point(19, 188);
             this.legenBox6.MinimumSize = new System.Drawing.Size(330, 25);
             this.legenBox6.Name = "legenBox6";
-            this.legenBox6.Size = new System.Drawing.Size(546, 25);
+            this.legenBox6.Size = new System.Drawing.Size(546, 20);
             this.legenBox6.TabIndex = 60;
             // 
             // legenBox5
@@ -1199,7 +1199,7 @@
             this.legenBox5.Location = new System.Drawing.Point(19, 155);
             this.legenBox5.MinimumSize = new System.Drawing.Size(330, 25);
             this.legenBox5.Name = "legenBox5";
-            this.legenBox5.Size = new System.Drawing.Size(546, 25);
+            this.legenBox5.Size = new System.Drawing.Size(546, 20);
             this.legenBox5.TabIndex = 59;
             // 
             // legenBox7
@@ -1207,7 +1207,7 @@
             this.legenBox7.Location = new System.Drawing.Point(19, 221);
             this.legenBox7.MinimumSize = new System.Drawing.Size(330, 25);
             this.legenBox7.Name = "legenBox7";
-            this.legenBox7.Size = new System.Drawing.Size(546, 25);
+            this.legenBox7.Size = new System.Drawing.Size(546, 20);
             this.legenBox7.TabIndex = 54;
             // 
             // sensePage1
@@ -1222,7 +1222,7 @@
             this.sensePage1.Location = new System.Drawing.Point(4, 22);
             this.sensePage1.Name = "sensePage1";
             this.sensePage1.Padding = new System.Windows.Forms.Padding(3);
-            this.sensePage1.Size = new System.Drawing.Size(584, 269);
+            this.sensePage1.Size = new System.Drawing.Size(580, 269);
             this.sensePage1.TabIndex = 3;
             this.sensePage1.Text = "Senses";
             this.sensePage1.UseVisualStyleBackColor = true;
@@ -1232,7 +1232,7 @@
             this.senseBox4.Location = new System.Drawing.Point(19, 122);
             this.senseBox4.MinimumSize = new System.Drawing.Size(330, 25);
             this.senseBox4.Name = "senseBox4";
-            this.senseBox4.Size = new System.Drawing.Size(546, 25);
+            this.senseBox4.Size = new System.Drawing.Size(546, 20);
             this.senseBox4.TabIndex = 58;
             // 
             // senseBox1
@@ -1240,7 +1240,7 @@
             this.senseBox1.Location = new System.Drawing.Point(19, 23);
             this.senseBox1.MinimumSize = new System.Drawing.Size(330, 25);
             this.senseBox1.Name = "senseBox1";
-            this.senseBox1.Size = new System.Drawing.Size(546, 25);
+            this.senseBox1.Size = new System.Drawing.Size(546, 20);
             this.senseBox1.TabIndex = 55;
             // 
             // senseBox2
@@ -1248,7 +1248,7 @@
             this.senseBox2.Location = new System.Drawing.Point(19, 56);
             this.senseBox2.MinimumSize = new System.Drawing.Size(330, 25);
             this.senseBox2.Name = "senseBox2";
-            this.senseBox2.Size = new System.Drawing.Size(546, 25);
+            this.senseBox2.Size = new System.Drawing.Size(546, 20);
             this.senseBox2.TabIndex = 56;
             // 
             // senseBox3
@@ -1256,7 +1256,7 @@
             this.senseBox3.Location = new System.Drawing.Point(19, 89);
             this.senseBox3.MinimumSize = new System.Drawing.Size(330, 25);
             this.senseBox3.Name = "senseBox3";
-            this.senseBox3.Size = new System.Drawing.Size(546, 25);
+            this.senseBox3.Size = new System.Drawing.Size(546, 20);
             this.senseBox3.TabIndex = 57;
             // 
             // senseBox6
@@ -1264,7 +1264,7 @@
             this.senseBox6.Location = new System.Drawing.Point(19, 188);
             this.senseBox6.MinimumSize = new System.Drawing.Size(330, 25);
             this.senseBox6.Name = "senseBox6";
-            this.senseBox6.Size = new System.Drawing.Size(546, 25);
+            this.senseBox6.Size = new System.Drawing.Size(546, 20);
             this.senseBox6.TabIndex = 60;
             // 
             // senseBox5
@@ -1272,7 +1272,7 @@
             this.senseBox5.Location = new System.Drawing.Point(19, 155);
             this.senseBox5.MinimumSize = new System.Drawing.Size(330, 25);
             this.senseBox5.Name = "senseBox5";
-            this.senseBox5.Size = new System.Drawing.Size(546, 25);
+            this.senseBox5.Size = new System.Drawing.Size(546, 20);
             this.senseBox5.TabIndex = 59;
             // 
             // senseBox7
@@ -1280,7 +1280,7 @@
             this.senseBox7.Location = new System.Drawing.Point(19, 221);
             this.senseBox7.MinimumSize = new System.Drawing.Size(330, 25);
             this.senseBox7.Name = "senseBox7";
-            this.senseBox7.Size = new System.Drawing.Size(546, 25);
+            this.senseBox7.Size = new System.Drawing.Size(546, 20);
             this.senseBox7.TabIndex = 54;
             // 
             // damPage1
@@ -1292,7 +1292,7 @@
             this.damPage1.Location = new System.Drawing.Point(4, 22);
             this.damPage1.Name = "damPage1";
             this.damPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.damPage1.Size = new System.Drawing.Size(584, 269);
+            this.damPage1.Size = new System.Drawing.Size(580, 269);
             this.damPage1.TabIndex = 4;
             this.damPage1.Text = "Damage R/V";
             this.damPage1.UseVisualStyleBackColor = true;
@@ -1311,9 +1311,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(15, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Damage Resitances";
+            this.label1.Text = "Damage Resistances";
             // 
             // damVulBox1
             // 
@@ -1423,6 +1423,20 @@
             this.statBox.TabIndex = 1;
             this.statBox.TabStop = false;
             this.statBox.Text = "Stats";
+            // 
+            // speedBox
+            // 
+            this.speedBox.Location = new System.Drawing.Point(75, 115);
+            this.speedBox.Name = "speedBox";
+            this.speedBox.Size = new System.Drawing.Size(100, 20);
+            this.speedBox.TabIndex = 42;
+            // 
+            // armorBox
+            // 
+            this.armorBox.Location = new System.Drawing.Point(75, 85);
+            this.armorBox.Name = "armorBox";
+            this.armorBox.Size = new System.Drawing.Size(100, 20);
+            this.armorBox.TabIndex = 41;
             // 
             // speedLabel
             // 
@@ -1618,20 +1632,6 @@
             this.chalLbl.TabIndex = 51;
             this.chalLbl.Text = "Challenge";
             this.chalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // armorBox
-            // 
-            this.armorBox.Location = new System.Drawing.Point(75, 85);
-            this.armorBox.Name = "armorBox";
-            this.armorBox.Size = new System.Drawing.Size(100, 20);
-            this.armorBox.TabIndex = 41;
-            // 
-            // speedBox
-            // 
-            this.speedBox.Location = new System.Drawing.Point(75, 115);
-            this.speedBox.Name = "speedBox";
-            this.speedBox.Size = new System.Drawing.Size(100, 20);
-            this.speedBox.TabIndex = 42;
             // 
             // Navigation
             // 
