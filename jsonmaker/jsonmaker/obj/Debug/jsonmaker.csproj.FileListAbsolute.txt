@@ -20,3 +20,6 @@ D:\Visual Studio 2013\Projects\jsonmaker\jsonmaker\obj\Debug\jsonmaker.csprojRes
 D:\Visual Studio 2013\Projects\jsonmaker\jsonmaker\obj\Debug\jsonmaker.Navigation.resources
 D:\Visual Studio 2013\Projects\jsonmaker\jsonmaker\obj\Debug\jsonmaker.Properties.Resources.resources
 D:\Visual Studio 2013\Projects\jsonmaker\jsonmaker\obj\Debug\jsonmaker.csproj.GenerateResource.Cache
+C:\Users\Chris\Documents\DND5e\GitHub\WeAreLearning\jsonmaker\jsonmaker\bin\Debug\jsonmaker.exe.config
+C:\Users\Chris\Documents\DND5e\GitHub\WeAreLearning\jsonmaker\jsonmaker\obj\Debug\jsonmaker.exe
+C:\Users\Chris\Documents\DND5e\GitHub\WeAreLearning\jsonmaker\jsonmaker\obj\Debug\jsonmaker.pdb
