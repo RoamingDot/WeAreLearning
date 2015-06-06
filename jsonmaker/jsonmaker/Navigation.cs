@@ -56,11 +56,26 @@ namespace jsonmaker
 
         private void dataButton_Click(object sender, EventArgs e)
         {
-            string json = JsonConvert.SerializeObject(monsterList, Formatting.Indented);
-            dataLabel.Text = json;
 
-            monsterBox.DataSource = monsterList.Monster;
 
+            foreach (Monster mon in monsterList.Monster)
+            {
+                monsterBox.Items.Add(mon.Type);
+            }
+       
+
+        }
+
+        private void monsterBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (Monster mon in monsterList.Monster)
+            {
+                if (String.Equals(monsterBox.GetItemText(monsterBox.SelectedItem), mon.Type))
+                {
+                    string json = JsonConvert.SerializeObject(mon, Formatting.Indented);
+                    textBox1.Text = json;
+                }
+            }
         }
     }
 

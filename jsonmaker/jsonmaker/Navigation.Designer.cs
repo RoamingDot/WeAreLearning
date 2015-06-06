@@ -30,12 +30,12 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dataLabel = new System.Windows.Forms.Label();
             this.textLabel1 = new System.Windows.Forms.Label();
             this.FileLocation1 = new System.Windows.Forms.Label();
-            this.dataButton = new System.Windows.Forms.Button();
+            this.populateButton = new System.Windows.Forms.Button();
             this.monsterBox = new System.Windows.Forms.ListBox();
             this.monsterListLable = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -51,15 +51,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // dataLabel
-            // 
-            this.dataLabel.Location = new System.Drawing.Point(12, 143);
-            this.dataLabel.MinimumSize = new System.Drawing.Size(270, 270);
-            this.dataLabel.Name = "dataLabel";
-            this.dataLabel.Size = new System.Drawing.Size(352, 270);
-            this.dataLabel.TabIndex = 1;
-            this.dataLabel.Text = "Preview";
             // 
             // textLabel1
             // 
@@ -79,15 +70,15 @@
             this.FileLocation1.TabIndex = 3;
             this.FileLocation1.Text = "...";
             // 
-            // dataButton
+            // populateButton
             // 
-            this.dataButton.Location = new System.Drawing.Point(15, 117);
-            this.dataButton.Name = "dataButton";
-            this.dataButton.Size = new System.Drawing.Size(75, 23);
-            this.dataButton.TabIndex = 4;
-            this.dataButton.Text = "Display Data";
-            this.dataButton.UseVisualStyleBackColor = true;
-            this.dataButton.Click += new System.EventHandler(this.dataButton_Click);
+            this.populateButton.Location = new System.Drawing.Point(15, 68);
+            this.populateButton.Name = "populateButton";
+            this.populateButton.Size = new System.Drawing.Size(75, 23);
+            this.populateButton.TabIndex = 4;
+            this.populateButton.Text = "Populate List";
+            this.populateButton.UseVisualStyleBackColor = true;
+            this.populateButton.Click += new System.EventHandler(this.dataButton_Click);
             // 
             // monsterBox
             // 
@@ -96,6 +87,7 @@
             this.monsterBox.Name = "monsterBox";
             this.monsterBox.Size = new System.Drawing.Size(146, 95);
             this.monsterBox.TabIndex = 5;
+            this.monsterBox.SelectedIndexChanged += new System.EventHandler(this.monsterBox_SelectedIndexChanged);
             // 
             // monsterListLable
             // 
@@ -106,17 +98,27 @@
             this.monsterListLable.TabIndex = 6;
             this.monsterListLable.Text = "List of each Monster";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 97);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(414, 335);
+            this.textBox1.TabIndex = 7;
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(714, 444);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.monsterListLable);
             this.Controls.Add(this.monsterBox);
-            this.Controls.Add(this.dataButton);
+            this.Controls.Add(this.populateButton);
             this.Controls.Add(this.FileLocation1);
             this.Controls.Add(this.textLabel1);
-            this.Controls.Add(this.dataLabel);
             this.Controls.Add(this.button1);
             this.Name = "Navigation";
             this.Text = "Navigation";
@@ -129,12 +131,12 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Label dataLabel;
         private System.Windows.Forms.Label textLabel1;
         private System.Windows.Forms.Label FileLocation1;
-        private System.Windows.Forms.Button dataButton;
+        private System.Windows.Forms.Button populateButton;
         private System.Windows.Forms.ListBox monsterBox;
         private System.Windows.Forms.Label monsterListLable;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
