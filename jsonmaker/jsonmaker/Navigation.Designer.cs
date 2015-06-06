@@ -97,6 +97,21 @@
             this.alignLbl = new System.Windows.Forms.Label();
             this.abilTab = new System.Windows.Forms.TabControl();
             this.abilPage1 = new System.Windows.Forms.TabPage();
+            this.abilInput1 = new System.Windows.Forms.TextBox();
+            this.abilInput4 = new System.Windows.Forms.TextBox();
+            this.abilInput2 = new System.Windows.Forms.TextBox();
+            this.abilInput6 = new System.Windows.Forms.TextBox();
+            this.abilInput3 = new System.Windows.Forms.TextBox();
+            this.abilInput5 = new System.Windows.Forms.TextBox();
+            this.abilInput7 = new System.Windows.Forms.TextBox();
+            this.actionTab = new System.Windows.Forms.TabPage();
+            this.actBox1 = new System.Windows.Forms.TextBox();
+            this.actBox4 = new System.Windows.Forms.TextBox();
+            this.actBox2 = new System.Windows.Forms.TextBox();
+            this.actBox6 = new System.Windows.Forms.TextBox();
+            this.actBox3 = new System.Windows.Forms.TextBox();
+            this.actBox5 = new System.Windows.Forms.TextBox();
+            this.actBox7 = new System.Windows.Forms.TextBox();
             this.legendPage1 = new System.Windows.Forms.TabPage();
             this.legendBox4 = new System.Windows.Forms.TextBox();
             this.legendBox1 = new System.Windows.Forms.TextBox();
@@ -113,14 +128,12 @@
             this.senseBox4 = new System.Windows.Forms.TextBox();
             this.senseBox5 = new System.Windows.Forms.TextBox();
             this.statBox = new System.Windows.Forms.GroupBox();
+            this.speedLabel = new System.Windows.Forms.Label();
+            this.armorLbl = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.hitDNumLbl = new System.Windows.Forms.Label();
             this.hitDInput = new System.Windows.Forms.ComboBox();
             this.hitDLbl = new System.Windows.Forms.Label();
-            this.hitDNumLbl = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.armorInput = new System.Windows.Forms.NumericUpDown();
-            this.armorLbl = new System.Windows.Forms.Label();
-            this.speedInput = new System.Windows.Forms.NumericUpDown();
-            this.speedLabel = new System.Windows.Forms.Label();
             this.groupMisc = new System.Windows.Forms.GroupBox();
             this.xpInput = new System.Windows.Forms.NumericUpDown();
             this.xpLbl = new System.Windows.Forms.Label();
@@ -128,21 +141,8 @@
             this.pgLbl = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.chalLbl = new System.Windows.Forms.Label();
-            this.actionTab = new System.Windows.Forms.TabPage();
-            this.actBox1 = new System.Windows.Forms.TextBox();
-            this.actBox4 = new System.Windows.Forms.TextBox();
-            this.actBox2 = new System.Windows.Forms.TextBox();
-            this.actBox6 = new System.Windows.Forms.TextBox();
-            this.actBox3 = new System.Windows.Forms.TextBox();
-            this.actBox5 = new System.Windows.Forms.TextBox();
-            this.actBox7 = new System.Windows.Forms.TextBox();
-            this.abilInput1 = new System.Windows.Forms.TextBox();
-            this.abilInput4 = new System.Windows.Forms.TextBox();
-            this.abilInput2 = new System.Windows.Forms.TextBox();
-            this.abilInput6 = new System.Windows.Forms.TextBox();
-            this.abilInput3 = new System.Windows.Forms.TextBox();
-            this.abilInput5 = new System.Windows.Forms.TextBox();
-            this.abilInput7 = new System.Windows.Forms.TextBox();
+            this.armorBox = new System.Windows.Forms.TextBox();
+            this.speedBox = new System.Windows.Forms.TextBox();
             this.groupSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.surviInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stealInput)).BeginInit();
@@ -172,16 +172,14 @@
             this.groupBox2.SuspendLayout();
             this.abilTab.SuspendLayout();
             this.abilPage1.SuspendLayout();
+            this.actionTab.SuspendLayout();
             this.legendPage1.SuspendLayout();
             this.groupSenses.SuspendLayout();
             this.statBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.armorInput)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speedInput)).BeginInit();
             this.groupMisc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).BeginInit();
-            this.actionTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -882,7 +880,7 @@
             this.appearBox.Location = new System.Drawing.Point(90, 99);
             this.appearBox.MinimumSize = new System.Drawing.Size(4, 25);
             this.appearBox.Name = "appearBox";
-            this.appearBox.Size = new System.Drawing.Size(160, 25);
+            this.appearBox.Size = new System.Drawing.Size(160, 20);
             this.appearBox.TabIndex = 2;
             // 
             // apprLbl
@@ -950,7 +948,7 @@
             this.typeBox.Location = new System.Drawing.Point(89, 21);
             this.typeBox.MinimumSize = new System.Drawing.Size(4, 25);
             this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(160, 25);
+            this.typeBox.Size = new System.Drawing.Size(160, 20);
             this.typeBox.TabIndex = 0;
             // 
             // alignLbl
@@ -993,6 +991,135 @@
             this.abilPage1.Text = "Abilities";
             this.abilPage1.UseVisualStyleBackColor = true;
             // 
+            // abilInput1
+            // 
+            this.abilInput1.Location = new System.Drawing.Point(19, 17);
+            this.abilInput1.MinimumSize = new System.Drawing.Size(330, 25);
+            this.abilInput1.Name = "abilInput1";
+            this.abilInput1.Size = new System.Drawing.Size(414, 20);
+            this.abilInput1.TabIndex = 48;
+            // 
+            // abilInput4
+            // 
+            this.abilInput4.Location = new System.Drawing.Point(19, 116);
+            this.abilInput4.MinimumSize = new System.Drawing.Size(330, 25);
+            this.abilInput4.Name = "abilInput4";
+            this.abilInput4.Size = new System.Drawing.Size(414, 20);
+            this.abilInput4.TabIndex = 51;
+            // 
+            // abilInput2
+            // 
+            this.abilInput2.Location = new System.Drawing.Point(19, 50);
+            this.abilInput2.MinimumSize = new System.Drawing.Size(330, 25);
+            this.abilInput2.Name = "abilInput2";
+            this.abilInput2.Size = new System.Drawing.Size(414, 20);
+            this.abilInput2.TabIndex = 49;
+            // 
+            // abilInput6
+            // 
+            this.abilInput6.Location = new System.Drawing.Point(19, 182);
+            this.abilInput6.MinimumSize = new System.Drawing.Size(330, 25);
+            this.abilInput6.Name = "abilInput6";
+            this.abilInput6.Size = new System.Drawing.Size(414, 20);
+            this.abilInput6.TabIndex = 53;
+            // 
+            // abilInput3
+            // 
+            this.abilInput3.Location = new System.Drawing.Point(19, 80);
+            this.abilInput3.MinimumSize = new System.Drawing.Size(330, 25);
+            this.abilInput3.Name = "abilInput3";
+            this.abilInput3.Size = new System.Drawing.Size(414, 20);
+            this.abilInput3.TabIndex = 50;
+            // 
+            // abilInput5
+            // 
+            this.abilInput5.Location = new System.Drawing.Point(19, 149);
+            this.abilInput5.MinimumSize = new System.Drawing.Size(330, 25);
+            this.abilInput5.Name = "abilInput5";
+            this.abilInput5.Size = new System.Drawing.Size(414, 20);
+            this.abilInput5.TabIndex = 52;
+            // 
+            // abilInput7
+            // 
+            this.abilInput7.Location = new System.Drawing.Point(19, 215);
+            this.abilInput7.MinimumSize = new System.Drawing.Size(330, 25);
+            this.abilInput7.Name = "abilInput7";
+            this.abilInput7.Size = new System.Drawing.Size(414, 20);
+            this.abilInput7.TabIndex = 54;
+            // 
+            // actionTab
+            // 
+            this.actionTab.Controls.Add(this.actBox1);
+            this.actionTab.Controls.Add(this.actBox4);
+            this.actionTab.Controls.Add(this.actBox2);
+            this.actionTab.Controls.Add(this.actBox6);
+            this.actionTab.Controls.Add(this.actBox3);
+            this.actionTab.Controls.Add(this.actBox5);
+            this.actionTab.Controls.Add(this.actBox7);
+            this.actionTab.Location = new System.Drawing.Point(4, 22);
+            this.actionTab.Name = "actionTab";
+            this.actionTab.Padding = new System.Windows.Forms.Padding(3);
+            this.actionTab.Size = new System.Drawing.Size(465, 269);
+            this.actionTab.TabIndex = 2;
+            this.actionTab.Text = "Actions";
+            this.actionTab.UseVisualStyleBackColor = true;
+            // 
+            // actBox1
+            // 
+            this.actBox1.Location = new System.Drawing.Point(19, 17);
+            this.actBox1.MinimumSize = new System.Drawing.Size(330, 25);
+            this.actBox1.Name = "actBox1";
+            this.actBox1.Size = new System.Drawing.Size(414, 20);
+            this.actBox1.TabIndex = 41;
+            // 
+            // actBox4
+            // 
+            this.actBox4.Location = new System.Drawing.Point(19, 116);
+            this.actBox4.MinimumSize = new System.Drawing.Size(330, 25);
+            this.actBox4.Name = "actBox4";
+            this.actBox4.Size = new System.Drawing.Size(414, 20);
+            this.actBox4.TabIndex = 44;
+            // 
+            // actBox2
+            // 
+            this.actBox2.Location = new System.Drawing.Point(19, 50);
+            this.actBox2.MinimumSize = new System.Drawing.Size(330, 25);
+            this.actBox2.Name = "actBox2";
+            this.actBox2.Size = new System.Drawing.Size(414, 20);
+            this.actBox2.TabIndex = 42;
+            // 
+            // actBox6
+            // 
+            this.actBox6.Location = new System.Drawing.Point(19, 182);
+            this.actBox6.MinimumSize = new System.Drawing.Size(330, 25);
+            this.actBox6.Name = "actBox6";
+            this.actBox6.Size = new System.Drawing.Size(414, 20);
+            this.actBox6.TabIndex = 46;
+            // 
+            // actBox3
+            // 
+            this.actBox3.Location = new System.Drawing.Point(19, 83);
+            this.actBox3.MinimumSize = new System.Drawing.Size(330, 25);
+            this.actBox3.Name = "actBox3";
+            this.actBox3.Size = new System.Drawing.Size(414, 20);
+            this.actBox3.TabIndex = 43;
+            // 
+            // actBox5
+            // 
+            this.actBox5.Location = new System.Drawing.Point(19, 149);
+            this.actBox5.MinimumSize = new System.Drawing.Size(330, 25);
+            this.actBox5.Name = "actBox5";
+            this.actBox5.Size = new System.Drawing.Size(414, 20);
+            this.actBox5.TabIndex = 45;
+            // 
+            // actBox7
+            // 
+            this.actBox7.Location = new System.Drawing.Point(19, 215);
+            this.actBox7.MinimumSize = new System.Drawing.Size(330, 25);
+            this.actBox7.Name = "actBox7";
+            this.actBox7.Size = new System.Drawing.Size(414, 20);
+            this.actBox7.TabIndex = 47;
+            // 
             // legendPage1
             // 
             this.legendPage1.Controls.Add(this.legendBox4);
@@ -1015,7 +1142,7 @@
             this.legendBox4.Location = new System.Drawing.Point(19, 116);
             this.legendBox4.MinimumSize = new System.Drawing.Size(330, 25);
             this.legendBox4.Name = "legendBox4";
-            this.legendBox4.Size = new System.Drawing.Size(384, 25);
+            this.legendBox4.Size = new System.Drawing.Size(384, 20);
             this.legendBox4.TabIndex = 44;
             // 
             // legendBox1
@@ -1023,7 +1150,7 @@
             this.legendBox1.Location = new System.Drawing.Point(19, 17);
             this.legendBox1.MinimumSize = new System.Drawing.Size(330, 25);
             this.legendBox1.Name = "legendBox1";
-            this.legendBox1.Size = new System.Drawing.Size(384, 25);
+            this.legendBox1.Size = new System.Drawing.Size(384, 20);
             this.legendBox1.TabIndex = 41;
             // 
             // legendBox2
@@ -1031,7 +1158,7 @@
             this.legendBox2.Location = new System.Drawing.Point(19, 50);
             this.legendBox2.MinimumSize = new System.Drawing.Size(330, 25);
             this.legendBox2.Name = "legendBox2";
-            this.legendBox2.Size = new System.Drawing.Size(384, 25);
+            this.legendBox2.Size = new System.Drawing.Size(384, 20);
             this.legendBox2.TabIndex = 42;
             // 
             // legendBox3
@@ -1039,7 +1166,7 @@
             this.legendBox3.Location = new System.Drawing.Point(19, 83);
             this.legendBox3.MinimumSize = new System.Drawing.Size(330, 25);
             this.legendBox3.Name = "legendBox3";
-            this.legendBox3.Size = new System.Drawing.Size(384, 25);
+            this.legendBox3.Size = new System.Drawing.Size(384, 20);
             this.legendBox3.TabIndex = 43;
             // 
             // legendBox6
@@ -1047,7 +1174,7 @@
             this.legendBox6.Location = new System.Drawing.Point(19, 182);
             this.legendBox6.MinimumSize = new System.Drawing.Size(330, 25);
             this.legendBox6.Name = "legendBox6";
-            this.legendBox6.Size = new System.Drawing.Size(384, 25);
+            this.legendBox6.Size = new System.Drawing.Size(384, 20);
             this.legendBox6.TabIndex = 46;
             // 
             // legendBox5
@@ -1055,7 +1182,7 @@
             this.legendBox5.Location = new System.Drawing.Point(19, 149);
             this.legendBox5.MinimumSize = new System.Drawing.Size(330, 25);
             this.legendBox5.Name = "legendBox5";
-            this.legendBox5.Size = new System.Drawing.Size(384, 25);
+            this.legendBox5.Size = new System.Drawing.Size(384, 20);
             this.legendBox5.TabIndex = 45;
             // 
             // legendBox7
@@ -1063,7 +1190,7 @@
             this.legendBox7.Location = new System.Drawing.Point(19, 215);
             this.legendBox7.MinimumSize = new System.Drawing.Size(330, 25);
             this.legendBox7.Name = "legendBox7";
-            this.legendBox7.Size = new System.Drawing.Size(384, 25);
+            this.legendBox7.Size = new System.Drawing.Size(384, 20);
             this.legendBox7.TabIndex = 39;
             // 
             // languageBox
@@ -1113,7 +1240,7 @@
             this.senseBox1.Location = new System.Drawing.Point(19, 24);
             this.senseBox1.MinimumSize = new System.Drawing.Size(4, 25);
             this.senseBox1.Name = "senseBox1";
-            this.senseBox1.Size = new System.Drawing.Size(214, 25);
+            this.senseBox1.Size = new System.Drawing.Size(214, 20);
             this.senseBox1.TabIndex = 10;
             // 
             // senseBox2
@@ -1121,7 +1248,7 @@
             this.senseBox2.Location = new System.Drawing.Point(19, 55);
             this.senseBox2.MinimumSize = new System.Drawing.Size(4, 25);
             this.senseBox2.Name = "senseBox2";
-            this.senseBox2.Size = new System.Drawing.Size(214, 25);
+            this.senseBox2.Size = new System.Drawing.Size(214, 20);
             this.senseBox2.TabIndex = 11;
             // 
             // senseBox3
@@ -1129,7 +1256,7 @@
             this.senseBox3.Location = new System.Drawing.Point(19, 89);
             this.senseBox3.MinimumSize = new System.Drawing.Size(4, 25);
             this.senseBox3.Name = "senseBox3";
-            this.senseBox3.Size = new System.Drawing.Size(214, 25);
+            this.senseBox3.Size = new System.Drawing.Size(214, 20);
             this.senseBox3.TabIndex = 12;
             // 
             // senseBox4
@@ -1137,7 +1264,7 @@
             this.senseBox4.Location = new System.Drawing.Point(19, 123);
             this.senseBox4.MinimumSize = new System.Drawing.Size(4, 25);
             this.senseBox4.Name = "senseBox4";
-            this.senseBox4.Size = new System.Drawing.Size(214, 25);
+            this.senseBox4.Size = new System.Drawing.Size(214, 20);
             this.senseBox4.TabIndex = 13;
             // 
             // senseBox5
@@ -1145,14 +1272,14 @@
             this.senseBox5.Location = new System.Drawing.Point(19, 157);
             this.senseBox5.MinimumSize = new System.Drawing.Size(4, 25);
             this.senseBox5.Name = "senseBox5";
-            this.senseBox5.Size = new System.Drawing.Size(214, 25);
+            this.senseBox5.Size = new System.Drawing.Size(214, 20);
             this.senseBox5.TabIndex = 14;
             // 
             // statBox
             // 
-            this.statBox.Controls.Add(this.speedInput);
+            this.statBox.Controls.Add(this.speedBox);
+            this.statBox.Controls.Add(this.armorBox);
             this.statBox.Controls.Add(this.speedLabel);
-            this.statBox.Controls.Add(this.armorInput);
             this.statBox.Controls.Add(this.armorLbl);
             this.statBox.Controls.Add(this.numericUpDown1);
             this.statBox.Controls.Add(this.hitDNumLbl);
@@ -1165,6 +1292,59 @@
             this.statBox.TabIndex = 1;
             this.statBox.TabStop = false;
             this.statBox.Text = "Stats";
+            // 
+            // speedLabel
+            // 
+            this.speedLabel.AutoSize = true;
+            this.speedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.speedLabel.Location = new System.Drawing.Point(26, 112);
+            this.speedLabel.MinimumSize = new System.Drawing.Size(0, 22);
+            this.speedLabel.Name = "speedLabel";
+            this.speedLabel.Size = new System.Drawing.Size(43, 22);
+            this.speedLabel.TabIndex = 40;
+            this.speedLabel.Text = "Speed";
+            this.speedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // armorLbl
+            // 
+            this.armorLbl.AutoSize = true;
+            this.armorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.armorLbl.Location = new System.Drawing.Point(47, 82);
+            this.armorLbl.MinimumSize = new System.Drawing.Size(0, 22);
+            this.armorLbl.Name = "armorLbl";
+            this.armorLbl.Size = new System.Drawing.Size(22, 22);
+            this.armorLbl.TabIndex = 38;
+            this.armorLbl.Text = "AC";
+            this.armorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(80, 28);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
+            this.numericUpDown1.TabIndex = 37;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // hitDNumLbl
+            // 
+            this.hitDNumLbl.AutoSize = true;
+            this.hitDNumLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.hitDNumLbl.Location = new System.Drawing.Point(15, 24);
+            this.hitDNumLbl.MinimumSize = new System.Drawing.Size(0, 22);
+            this.hitDNumLbl.Name = "hitDNumLbl";
+            this.hitDNumLbl.Size = new System.Drawing.Size(54, 22);
+            this.hitDNumLbl.TabIndex = 36;
+            this.hitDNumLbl.Text = "# Hit Die";
+            this.hitDNumLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // hitDInput
             // 
@@ -1194,73 +1374,6 @@
             this.hitDLbl.TabIndex = 32;
             this.hitDLbl.Text = "Hit Dice";
             this.hitDLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // hitDNumLbl
-            // 
-            this.hitDNumLbl.AutoSize = true;
-            this.hitDNumLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.hitDNumLbl.Location = new System.Drawing.Point(15, 24);
-            this.hitDNumLbl.MinimumSize = new System.Drawing.Size(0, 22);
-            this.hitDNumLbl.Name = "hitDNumLbl";
-            this.hitDNumLbl.Size = new System.Drawing.Size(54, 22);
-            this.hitDNumLbl.TabIndex = 36;
-            this.hitDNumLbl.Text = "# Hit Die";
-            this.hitDNumLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(80, 28);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
-            this.numericUpDown1.TabIndex = 37;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // armorInput
-            // 
-            this.armorInput.Location = new System.Drawing.Point(80, 82);
-            this.armorInput.Name = "armorInput";
-            this.armorInput.Size = new System.Drawing.Size(59, 20);
-            this.armorInput.TabIndex = 39;
-            // 
-            // armorLbl
-            // 
-            this.armorLbl.AutoSize = true;
-            this.armorLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.armorLbl.Location = new System.Drawing.Point(47, 82);
-            this.armorLbl.MinimumSize = new System.Drawing.Size(0, 22);
-            this.armorLbl.Name = "armorLbl";
-            this.armorLbl.Size = new System.Drawing.Size(22, 22);
-            this.armorLbl.TabIndex = 38;
-            this.armorLbl.Text = "AC";
-            this.armorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // speedInput
-            // 
-            this.speedInput.Location = new System.Drawing.Point(80, 116);
-            this.speedInput.Name = "speedInput";
-            this.speedInput.Size = new System.Drawing.Size(59, 20);
-            this.speedInput.TabIndex = 41;
-            // 
-            // speedLabel
-            // 
-            this.speedLabel.AutoSize = true;
-            this.speedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.speedLabel.Location = new System.Drawing.Point(26, 112);
-            this.speedLabel.MinimumSize = new System.Drawing.Size(0, 22);
-            this.speedLabel.Name = "speedLabel";
-            this.speedLabel.Size = new System.Drawing.Size(43, 22);
-            this.speedLabel.TabIndex = 40;
-            this.speedLabel.Text = "Speed";
-            this.speedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupMisc
             // 
@@ -1375,134 +1488,20 @@
             this.chalLbl.Text = "Challenge";
             this.chalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // actionTab
+            // armorBox
             // 
-            this.actionTab.Controls.Add(this.actBox1);
-            this.actionTab.Controls.Add(this.actBox4);
-            this.actionTab.Controls.Add(this.actBox2);
-            this.actionTab.Controls.Add(this.actBox6);
-            this.actionTab.Controls.Add(this.actBox3);
-            this.actionTab.Controls.Add(this.actBox5);
-            this.actionTab.Controls.Add(this.actBox7);
-            this.actionTab.Location = new System.Drawing.Point(4, 22);
-            this.actionTab.Name = "actionTab";
-            this.actionTab.Padding = new System.Windows.Forms.Padding(3);
-            this.actionTab.Size = new System.Drawing.Size(465, 269);
-            this.actionTab.TabIndex = 2;
-            this.actionTab.Text = "Actions";
-            this.actionTab.UseVisualStyleBackColor = true;
+            this.armorBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.armorBox.Location = new System.Drawing.Point(76, 83);
+            this.armorBox.Name = "armorBox";
+            this.armorBox.Size = new System.Drawing.Size(100, 20);
+            this.armorBox.TabIndex = 41;
             // 
-            // actBox1
+            // speedBox
             // 
-            this.actBox1.Location = new System.Drawing.Point(19, 17);
-            this.actBox1.MinimumSize = new System.Drawing.Size(330, 25);
-            this.actBox1.Name = "actBox1";
-            this.actBox1.Size = new System.Drawing.Size(414, 25);
-            this.actBox1.TabIndex = 41;
-            // 
-            // actBox4
-            // 
-            this.actBox4.Location = new System.Drawing.Point(19, 116);
-            this.actBox4.MinimumSize = new System.Drawing.Size(330, 25);
-            this.actBox4.Name = "actBox4";
-            this.actBox4.Size = new System.Drawing.Size(414, 25);
-            this.actBox4.TabIndex = 44;
-            // 
-            // actBox2
-            // 
-            this.actBox2.Location = new System.Drawing.Point(19, 50);
-            this.actBox2.MinimumSize = new System.Drawing.Size(330, 25);
-            this.actBox2.Name = "actBox2";
-            this.actBox2.Size = new System.Drawing.Size(414, 25);
-            this.actBox2.TabIndex = 42;
-            // 
-            // actBox6
-            // 
-            this.actBox6.Location = new System.Drawing.Point(19, 182);
-            this.actBox6.MinimumSize = new System.Drawing.Size(330, 25);
-            this.actBox6.Name = "actBox6";
-            this.actBox6.Size = new System.Drawing.Size(414, 25);
-            this.actBox6.TabIndex = 46;
-            // 
-            // actBox3
-            // 
-            this.actBox3.Location = new System.Drawing.Point(19, 83);
-            this.actBox3.MinimumSize = new System.Drawing.Size(330, 25);
-            this.actBox3.Name = "actBox3";
-            this.actBox3.Size = new System.Drawing.Size(414, 25);
-            this.actBox3.TabIndex = 43;
-            // 
-            // actBox5
-            // 
-            this.actBox5.Location = new System.Drawing.Point(19, 149);
-            this.actBox5.MinimumSize = new System.Drawing.Size(330, 25);
-            this.actBox5.Name = "actBox5";
-            this.actBox5.Size = new System.Drawing.Size(414, 25);
-            this.actBox5.TabIndex = 45;
-            // 
-            // actBox7
-            // 
-            this.actBox7.Location = new System.Drawing.Point(19, 215);
-            this.actBox7.MinimumSize = new System.Drawing.Size(330, 25);
-            this.actBox7.Name = "actBox7";
-            this.actBox7.Size = new System.Drawing.Size(414, 25);
-            this.actBox7.TabIndex = 47;
-            // 
-            // abilInput1
-            // 
-            this.abilInput1.Location = new System.Drawing.Point(19, 17);
-            this.abilInput1.MinimumSize = new System.Drawing.Size(330, 25);
-            this.abilInput1.Name = "abilInput1";
-            this.abilInput1.Size = new System.Drawing.Size(414, 25);
-            this.abilInput1.TabIndex = 48;
-            // 
-            // abilInput4
-            // 
-            this.abilInput4.Location = new System.Drawing.Point(19, 116);
-            this.abilInput4.MinimumSize = new System.Drawing.Size(330, 25);
-            this.abilInput4.Name = "abilInput4";
-            this.abilInput4.Size = new System.Drawing.Size(414, 25);
-            this.abilInput4.TabIndex = 51;
-            // 
-            // abilInput2
-            // 
-            this.abilInput2.Location = new System.Drawing.Point(19, 50);
-            this.abilInput2.MinimumSize = new System.Drawing.Size(330, 25);
-            this.abilInput2.Name = "abilInput2";
-            this.abilInput2.Size = new System.Drawing.Size(414, 25);
-            this.abilInput2.TabIndex = 49;
-            // 
-            // abilInput6
-            // 
-            this.abilInput6.Location = new System.Drawing.Point(19, 182);
-            this.abilInput6.MinimumSize = new System.Drawing.Size(330, 25);
-            this.abilInput6.Name = "abilInput6";
-            this.abilInput6.Size = new System.Drawing.Size(414, 25);
-            this.abilInput6.TabIndex = 53;
-            // 
-            // abilInput3
-            // 
-            this.abilInput3.Location = new System.Drawing.Point(19, 80);
-            this.abilInput3.MinimumSize = new System.Drawing.Size(330, 25);
-            this.abilInput3.Name = "abilInput3";
-            this.abilInput3.Size = new System.Drawing.Size(414, 25);
-            this.abilInput3.TabIndex = 50;
-            // 
-            // abilInput5
-            // 
-            this.abilInput5.Location = new System.Drawing.Point(19, 149);
-            this.abilInput5.MinimumSize = new System.Drawing.Size(330, 25);
-            this.abilInput5.Name = "abilInput5";
-            this.abilInput5.Size = new System.Drawing.Size(414, 25);
-            this.abilInput5.TabIndex = 52;
-            // 
-            // abilInput7
-            // 
-            this.abilInput7.Location = new System.Drawing.Point(19, 215);
-            this.abilInput7.MinimumSize = new System.Drawing.Size(330, 25);
-            this.abilInput7.Name = "abilInput7";
-            this.abilInput7.Size = new System.Drawing.Size(414, 25);
-            this.abilInput7.TabIndex = 54;
+            this.speedBox.Location = new System.Drawing.Point(76, 113);
+            this.speedBox.Name = "speedBox";
+            this.speedBox.Size = new System.Drawing.Size(100, 20);
+            this.speedBox.TabIndex = 42;
             // 
             // Navigation
             // 
@@ -1559,6 +1558,8 @@
             this.abilTab.ResumeLayout(false);
             this.abilPage1.ResumeLayout(false);
             this.abilPage1.PerformLayout();
+            this.actionTab.ResumeLayout(false);
+            this.actionTab.PerformLayout();
             this.legendPage1.ResumeLayout(false);
             this.legendPage1.PerformLayout();
             this.groupSenses.ResumeLayout(false);
@@ -1566,14 +1567,10 @@
             this.statBox.ResumeLayout(false);
             this.statBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.armorInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speedInput)).EndInit();
             this.groupMisc.ResumeLayout(false);
             this.groupMisc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).EndInit();
-            this.actionTab.ResumeLayout(false);
-            this.actionTab.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1668,11 +1665,9 @@
         private System.Windows.Forms.GroupBox statBox;
         private System.Windows.Forms.ComboBox hitDInput;
         private System.Windows.Forms.Label hitDLbl;
-        private System.Windows.Forms.NumericUpDown armorInput;
         private System.Windows.Forms.Label armorLbl;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label hitDNumLbl;
-        private System.Windows.Forms.NumericUpDown speedInput;
         private System.Windows.Forms.Label speedLabel;
         private System.Windows.Forms.TextBox abilInput1;
         private System.Windows.Forms.TextBox abilInput4;
@@ -1696,6 +1691,8 @@
         private System.Windows.Forms.Label pgLbl;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label chalLbl;
+        private System.Windows.Forms.TextBox speedBox;
+        private System.Windows.Forms.TextBox armorBox;
     }
 }
 
