@@ -22,18 +22,7 @@ namespace jsonmaker
         }
 
         RootObject monsterList;
-
-        public static Dictionary<string, int> choices = new Dictionary<string, int>() 
-        {
-           { "d4", 4},
-           { "d6", 6},
-           { "d8", 8},
-           { "d10", 10}, 
-           { "d12", 12},
-           { "d20", 20},
-           { "d100", 100}
-        };
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -84,8 +73,7 @@ namespace jsonmaker
                     //Formats JSON into readable text and puts in Text box tab
                     //Fill box with Text
                     monsterTextBox.Text = mon.ToString();
-
-                                  
+  
                 }
             }
         }

@@ -71,49 +71,47 @@ namespace jsonmaker
     ***********************************************/
         public override string ToString()
         {
-            string temp = "";
+            string temp = ""; //Return Value
 
-            //Grab all the fields in _this.
-                //Loop through them and print out the non-collection types
+            //Print member names and values of _this
             foreach (var field in this.GetType().GetFields())
             {
-                if (!field.FieldType.IsGenericType)
+                if (!field.FieldType.IsGenericType) //Regular variables
+                {
                     temp += field.Name + ": " + field.GetValue(this) + Environment.NewLine;
-            }
+                }
+                else if (field.FieldType == typeof(List<string>))
+                {
+                    //Case: List of Strings
+                    List<string> subproperty = (List<string>)field.GetValue(this);
 
+                    if (subproperty != null)
+                    {
+                        //Print name
+                        temp += field.Name + ":" + Environment.NewLine;
+                        //Print listed items underneath
+                        foreach (string s in subproperty)
+                            temp += "  " + s + Environment.NewLine;
+                    }
+                }
+                else if(field.FieldType == typeof(Dictionary<string,int>))
+                {
+                    //Case: Dictionary<string, int>
+                    Dictionary<string, int> subproperty = (Dictionary<string, int>)field.GetValue(this);
 
-            //Lists and Dictionaries may be individually uninitialized
-                //Check and print SENSES
-            if (Senses != null)
-            {
-                temp += "Senses: " + Senses.Count() + Environment.NewLine;
-                foreach (string s in Senses)
-                    temp += "  " + s + Environment.NewLine;
+                    if (subproperty != null)
+                    {
+                        //Print Name
+                        temp += field.Name + ":" + Environment.NewLine;
+                        //Print listed items underneath
+                        foreach (KeyValuePair<string, int> s in Skills)
+                            temp += String.Format("  {0} +{1}{2}", 
+                                            s.Key, s.Value, Environment.NewLine);
+                    }
+                }
+                
             }
-
-                //Check and print ACTIONS
-            if (Actions != null)
-            {
-                temp += "Actions: " + Actions.Count() + Environment.NewLine;
-                foreach (string s in Actions)
-                    temp += "  " + s + Environment.NewLine;
-            }
-
-                //Check and print LEGENDARYACTIONS
-            if (LegendaryActions != null)
-            { 
-                temp += "Legendary Actions: " + LegendaryActions.Count() + Environment.NewLine;
-                foreach (string s in LegendaryActions)
-                    temp += "  " + s + Environment.NewLine;
-            }
-            //Check and print SKILLS
-            if (Skills != null)
-            { 
-                temp += "Skills: " + Skills.Count() + Environment.NewLine;
-                foreach (KeyValuePair<string, int> s in Skills)
-                    temp += String.Format("  {0} +{1}{2}", s.Key, s.Value, Environment.NewLine);
-            }
-
+         
             return temp;
         }
 
