@@ -11,7 +11,6 @@ using System.IO;
 using Newtonsoft.Json;
 
 
-
 namespace jsonmaker
 {
 
@@ -51,6 +50,8 @@ namespace jsonmaker
                     monsterList = JsonConvert.DeserializeObject<RootObject>(File.ReadAllText
                         (Path.GetFullPath(openFileDialog1.FileName)));
                     FileLocation1.Text = Path.GetFullPath(openFileDialog1.FileName) + " was loaded.";
+
+                    populateButton.Enabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -73,70 +74,18 @@ namespace jsonmaker
         {
             foreach (Monster mon in monsterList.Monster)
             {
-                if (String.Equals(monsterBox.GetItemText(monsterBox.SelectedItem), mon.Type))
+                if (String.Equals(monsterBox.GetItemText(monsterBox.SelectedItem), mon.Species))
                 {
-
+                 
                     //Puts JSON into JSON box tab
                     string json = JsonConvert.SerializeObject(mon, Formatting.Indented);
                     monsterJSONBox.Text = json;
-
+                    
                     //Formats JSON into readable text and puts in Text box tab
-                    string text = "";
-                    foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(mon))
-                    {
-
-                        if (property.PropertyType == typeof(List<string>))
-                        {
-                            //appends EX:    "Senses:"
-                            //                  "passive Perception 13"
-                            //                  "test"
-                            string name = property.Name;
-                            List<string> subproperty = (List<string>)property.GetValue(mon);
-
-                            if (subproperty != null)
-                            {
-                                text += name + ":";
-                                text += Environment.NewLine;
-                                foreach (string s in subproperty)
-                                {
-                                    text += "  ";
-                                    text += s;
-                                    text += Environment.NewLine;
-                                }
-                            }
-                        }
-                        else if (property.PropertyType == typeof(Dictionary<string, int>))
-                        {
-                            //appends EX:    "Skills:"
-                            //                  "Athletics: 5"
-                            //                  "test: 1"
-                            string name = property.Name;
-                            Dictionary<string, int> subproperty = (Dictionary<string, int>)property.GetValue(mon);
-
-
-                            if (subproperty != null)
-                            {
-                                text += name + ":";
-                                text += Environment.NewLine;
-                                foreach (KeyValuePair<string, int>entry in subproperty)
-                                {
-                                    text += "  ";
-                                    text += entry.Key + ": " + entry.Value;
-                                    text += Environment.NewLine;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            //appends EX: "Type: Ape"
-                            string name = property.Name;
-                            object value = property.GetValue(mon);
-                            text += string.Format("{0}: {1}", name, value);
-                            text += Environment.NewLine;
-                        }
-                    }
                     //Fill box with Text
-                    monsterTextBox.Text = text;
+                    monsterTextBox.Text = mon.ToString();
+
+                                  
                 }
             }
         }

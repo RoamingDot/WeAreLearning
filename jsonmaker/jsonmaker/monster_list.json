@@ -1,10 +1,10 @@
 {
  "Monster": [
     {
-      "Type": "Ape",
+      "Species": "Ape",
       "Challenge": "0.5",
       "Size": "Medium",
-      "Appearance": "Beast",
+      "Type": "Beast",
       "Alignment": "Unaligned",
       "ArmorClass": "12",
       "MinHP": "9",
@@ -30,10 +30,10 @@
 	}
     },
     {
-      "Type": "Ape2",
+      "Species": "Ape2",
       "Challenge": "1",
       "Size": "Medium",
-      "Appearance": "Beast",
+      "Type": "Beast",
       "Alignment": "Unaligned",
       "ArmorClass": "12",
       "MinHP": "9",
@@ -45,9 +45,7 @@
       "Intelligence": "6",
       "Wisdom": "12",
       "Charisma": "7",
-	  "Languages": [
-		"test language"
-	  ],
+	  "Languages": "test language",
       "Senses": [
         "passive Perception 13"
       ],
