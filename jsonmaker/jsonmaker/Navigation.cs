@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace jsonmaker
 {
-    
+
     public partial class Navigation : Form
     {
         public Navigation()
@@ -37,7 +37,7 @@ namespace jsonmaker
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
+
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = ".";
@@ -70,7 +70,7 @@ namespace jsonmaker
             {
                 monsterBox.Items.Add(mon.Type);
             }
-       
+
 
         }
 
@@ -87,7 +87,7 @@ namespace jsonmaker
 
                     //Formats JSON into readable text and puts in Text box tab
                     string text = "";
-                    foreach(PropertyDescriptor property in TypeDescriptor.GetProperties(mon))
+                    foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(mon))
                     {
 
                         if (property.PropertyType == typeof(List<string>))
@@ -99,7 +99,7 @@ namespace jsonmaker
                             string name = property.Name;
                             List<string> subproperty = (List<string>)property.GetValue(mon);
 
-                            
+
                             if (subproperty != null)
                             {
                                 text += name + ":";
@@ -111,8 +111,8 @@ namespace jsonmaker
                                     text += Environment.NewLine;
                                 }
                             }
-                                                   
-                            
+
+
 
                         }
                         else
@@ -125,7 +125,7 @@ namespace jsonmaker
 
                         }
                     }
-                        
+
                     //Fill box with Text
                     monsterTextBox.Text = text;
 
@@ -135,7 +135,7 @@ namespace jsonmaker
 
         private void CreateMonster()
         {
-            
+
         }
 
         private void Navigation_Load(object sender, EventArgs e)
@@ -144,41 +144,14 @@ namespace jsonmaker
         }
 
 
-    public class Monster
-    {
-        public string Type { get; set; }
-        public float Challenge { get; set; }
-        public int PageNumber { get; set; }
-        public string Size { get; set; }
-        public string Appearance { get; set; }
-        public string Race { get; set; }
-        public string Alignment { get; set; }
-        public int ArmorClass { get; set; }
-        public int MinHP { get; set; }
-        public int MaxHP { get; set; }
-        public int Speed { get; set; }
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Constitution { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
-        public string DamageVulnerability { get; set; }
-        public string DamageResistance { get; set; }
-        public string Description { get; set; }
-        public List<string> Languages { get; set; }
-        public List<string> Senses { get; set; }
-        public List<string> Actions { get; set; }
-        public List<string> LegendaryActions { get; set; }
-        public List<string> Skills { get; set; }
-    }
 
 
-    public class RootObject
-    {
-        public List<Monster> Monster { get; set; }
+        public class RootObject
+        {
+            public List<Monster> Monster { get; set; }
+        }
+
     }
+
 
 }
-
-

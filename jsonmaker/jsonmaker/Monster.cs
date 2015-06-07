@@ -35,7 +35,7 @@ namespace jsonmaker
         public List<string> Senses { get; set; }
         public List<string> Actions { get; set; }
         public List<string> LegendaryActions { get; set; }
-        public Dictionary<string, int> skills { get; set; }
+        public Dictionary<string, int> Skills { get; set; }
        
     }
 }
