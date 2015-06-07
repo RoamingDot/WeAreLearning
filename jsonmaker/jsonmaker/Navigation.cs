@@ -11,9 +11,10 @@ using System.IO;
 using Newtonsoft.Json;
 
 
+
 namespace jsonmaker
 {
-    
+
     public partial class Navigation : Form
     {
         public Navigation()
@@ -36,7 +37,7 @@ namespace jsonmaker
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
+
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = ".";
@@ -69,7 +70,7 @@ namespace jsonmaker
             {
                 monsterBox.Items.Add(mon.Type);
             }
-       
+
 
         }
 
@@ -79,15 +80,62 @@ namespace jsonmaker
             {
                 if (String.Equals(monsterBox.GetItemText(monsterBox.SelectedItem), mon.Type))
                 {
+
+                    //Puts JSON into JSON box tab
                     string json = JsonConvert.SerializeObject(mon, Formatting.Indented);
-                    textBox1.Text = json;
+                    monsterJSONBox.Text = json;
+
+                    //Formats JSON into readable text and puts in Text box tab
+                    string text = "";
+                    foreach (PropertyDescriptor property in TypeDescriptor.GetProperties(mon))
+                    {
+
+                        if (property.PropertyType == typeof(List<string>))
+                        {
+
+                            //appends EX:    "Senses:"
+                            //                  "passive Perception 13"
+                            //                  "test"
+                            string name = property.Name;
+                            List<string> subproperty = (List<string>)property.GetValue(mon);
+
+
+                            if (subproperty != null)
+                            {
+                                text += name + ":";
+                                text += Environment.NewLine;
+                                foreach (string s in subproperty)
+                                {
+                                    text += "  ";
+                                    text += s;
+                                    text += Environment.NewLine;
+                                }
+                            }
+
+
+
+                        }
+                        else
+                        {
+                            //appends EX: "Type: Ape"
+                            string name = property.Name;
+                            object value = property.GetValue(mon);
+                            text += string.Format("{0}: {1}", name, value);
+                            text += Environment.NewLine;
+
+                        }
+                    }
+
+                    //Fill box with Text
+                    monsterTextBox.Text = text;
+
                 }
             }
         }
 
         private void CreateMonster()
         {
-            
+
         }
 
         private void Navigation_Load(object sender, EventArgs e)
@@ -95,14 +143,15 @@ namespace jsonmaker
 
         }
 
-    }
 
 
-    public class RootObject
-    {
-        public List<Monster> Monster { get; set; }
+
+        public class RootObject
+        {
+            public List<Monster> Monster { get; set; }
+        }
+
     }
+
 
 }
-
-

@@ -24,9 +24,10 @@
         "Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.",
         "Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage."
       ],
-      "Skills": [
-        "Athletics +5"
-      ]
+	  "Skills":
+	{
+		"Athletics": "5"
+	}
     },
     {
       "Type": "Ape2",
@@ -44,6 +45,9 @@
       "Intelligence": "6",
       "Wisdom": "12",
       "Charisma": "7",
+	  "Languages": [
+		"test language"
+	  ],
       "Senses": [
         "passive Perception 13"
       ],
@@ -52,9 +56,10 @@
         "Fist. Melee Weapon Attack: +5 to hit, reach 5ft., one target. Hit: 6(1d6 +3) bludgeoning damage.",
         "Rock. Ranged Weapon Attack: +5 to hit, range 25/50ft., one target. Hit: 6(1d6 +3) bludgeoning damage."
       ],
-      "Skills": [
-        "Athletics +5"
-      ]
+	  "Skills":
+	{
+		"Athletics": "5"
+	}
     }
   ]
 }
