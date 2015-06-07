@@ -37,7 +37,6 @@ namespace jsonmaker
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
             openFileDialog1.InitialDirectory = ".";
@@ -64,14 +63,10 @@ namespace jsonmaker
 
         private void dataButton_Click(object sender, EventArgs e)
         {
-
-
             foreach (Monster mon in monsterList.Monster)
             {
                 monsterBox.Items.Add(mon.Type);
             }
-
-
         }
 
         private void monsterBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,13 +87,11 @@ namespace jsonmaker
 
                         if (property.PropertyType == typeof(List<string>))
                         {
-
                             //appends EX:    "Senses:"
                             //                  "passive Perception 13"
                             //                  "test"
                             string name = property.Name;
                             List<string> subproperty = (List<string>)property.GetValue(mon);
-
 
                             if (subproperty != null)
                             {
@@ -111,9 +104,27 @@ namespace jsonmaker
                                     text += Environment.NewLine;
                                 }
                             }
+                        }
+                        else if (property.PropertyType == typeof(Dictionary<string, int>))
+                        {
+                            //appends EX:    "Skills:"
+                            //                  "Athletics: 5"
+                            //                  "test: 1"
+                            string name = property.Name;
+                            Dictionary<string, int> subproperty = (Dictionary<string, int>)property.GetValue(mon);
 
 
-
+                            if (subproperty != null)
+                            {
+                                text += name + ":";
+                                text += Environment.NewLine;
+                                foreach (KeyValuePair<string, int>entry in subproperty)
+                                {
+                                    text += "  ";
+                                    text += entry.Key + ": " + entry.Value;
+                                    text += Environment.NewLine;
+                                }
+                            }
                         }
                         else
                         {
@@ -122,13 +133,10 @@ namespace jsonmaker
                             object value = property.GetValue(mon);
                             text += string.Format("{0}: {1}", name, value);
                             text += Environment.NewLine;
-
                         }
                     }
-
                     //Fill box with Text
                     monsterTextBox.Text = text;
-
                 }
             }
         }
@@ -143,15 +151,10 @@ namespace jsonmaker
 
         }
 
-
-
-
         public class RootObject
         {
             public List<Monster> Monster { get; set; }
         }
 
     }
-
-
 }
