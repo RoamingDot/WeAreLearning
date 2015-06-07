@@ -35,7 +35,7 @@
             this.populateButton = new System.Windows.Forms.Button();
             this.monsterBox = new System.Windows.Forms.ListBox();
             this.monsterListLable = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.monsterTextBox = new System.Windows.Forms.TextBox();
             this.groupSkills = new System.Windows.Forms.GroupBox();
             this.surviInput = new System.Windows.Forms.NumericUpDown();
             this.surviLbl = new System.Windows.Forms.Label();
@@ -156,6 +156,10 @@
             this.chalLbl = new System.Windows.Forms.Label();
             this.groupLanguage = new System.Windows.Forms.GroupBox();
             this.langInput = new System.Windows.Forms.TextBox();
+            this.monsterTextTab = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.monsterJSONBox = new System.Windows.Forms.TextBox();
             this.groupSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.surviInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stealInput)).BeginInit();
@@ -196,6 +200,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.xpInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).BeginInit();
             this.groupLanguage.SuspendLayout();
+            this.monsterTextTab.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -261,15 +268,15 @@
             this.monsterListLable.TabIndex = 6;
             this.monsterListLable.Text = "List of Monsters";
             // 
-            // textBox1
+            // monsterTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(15, 221);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(276, 495);
-            this.textBox1.TabIndex = 7;
+            this.monsterTextBox.Location = new System.Drawing.Point(6, 6);
+            this.monsterTextBox.Multiline = true;
+            this.monsterTextBox.Name = "monsterTextBox";
+            this.monsterTextBox.ReadOnly = true;
+            this.monsterTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.monsterTextBox.Size = new System.Drawing.Size(284, 468);
+            this.monsterTextBox.TabIndex = 7;
             // 
             // groupSkills
             // 
@@ -1617,6 +1624,47 @@
             this.langInput.Name = "langInput";
             this.langInput.Size = new System.Drawing.Size(194, 128);
             this.langInput.TabIndex = 0;
+            // monsterTextTab
+            // 
+            this.monsterTextTab.Controls.Add(this.tabPage1);
+            this.monsterTextTab.Controls.Add(this.tabPage2);
+            this.monsterTextTab.Location = new System.Drawing.Point(12, 214);
+            this.monsterTextTab.Name = "monsterTextTab";
+            this.monsterTextTab.SelectedIndex = 0;
+            this.monsterTextTab.Size = new System.Drawing.Size(304, 506);
+            this.monsterTextTab.TabIndex = 8;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.monsterTextBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(296, 480);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Text";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.monsterJSONBox);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(296, 480);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "JSON";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // monsterJSONBox
+            // 
+            this.monsterJSONBox.Location = new System.Drawing.Point(6, 6);
+            this.monsterJSONBox.Multiline = true;
+            this.monsterJSONBox.Name = "monsterJSONBox";
+            this.monsterJSONBox.ReadOnly = true;
+            this.monsterJSONBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.monsterJSONBox.Size = new System.Drawing.Size(284, 468);
+            this.monsterJSONBox.TabIndex = 8;
             // 
             // Navigation
             // 
@@ -1630,13 +1678,13 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupScores);
             this.Controls.Add(this.groupSkills);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.monsterListLable);
             this.Controls.Add(this.monsterBox);
             this.Controls.Add(this.populateButton);
             this.Controls.Add(this.FileLocation1);
             this.Controls.Add(this.textLabel1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.monsterTextTab);
             this.Name = "Navigation";
             this.Text = "Navigation";
             this.Load += new System.EventHandler(this.Navigation_Load);
@@ -1692,6 +1740,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).EndInit();
             this.groupLanguage.ResumeLayout(false);
             this.groupLanguage.PerformLayout();
+            this.monsterTextTab.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1706,7 +1759,7 @@
         private System.Windows.Forms.Button populateButton;
         private System.Windows.Forms.ListBox monsterBox;
         private System.Windows.Forms.Label monsterListLable;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox monsterTextBox;
         private System.Windows.Forms.GroupBox groupSkills;
         private System.Windows.Forms.NumericUpDown surviInput;
         private System.Windows.Forms.Label surviLbl;
@@ -1827,6 +1880,10 @@
         private System.Windows.Forms.TextBox armorBox;
         private System.Windows.Forms.GroupBox groupLanguage;
         private System.Windows.Forms.TextBox langInput;
+        private System.Windows.Forms.TabControl monsterTextTab;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TextBox monsterJSONBox;
     }
 }
 

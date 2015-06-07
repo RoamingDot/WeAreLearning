@@ -44,6 +44,9 @@
       "Intelligence": "6",
       "Wisdom": "12",
       "Charisma": "7",
+	  "Languages": [
+		"test language"
+	  ],
       "Senses": [
         "passive Perception 13"
       ],
