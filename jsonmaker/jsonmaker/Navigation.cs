@@ -23,6 +23,17 @@ namespace jsonmaker
 
         RootObject monsterList;
 
+        public static Dictionary<string, int> choices = new Dictionary<string, int>() 
+        {
+           { "d4", 4},
+           { "d6", 6},
+           { "d8", 8},
+           { "d10", 10}, 
+           { "d12", 12},
+           { "d20", 20},
+           { "d100", 100}
+        };
+
         private void button1_Click(object sender, EventArgs e)
         {
          
@@ -74,41 +85,18 @@ namespace jsonmaker
             }
         }
 
+        private void CreateMonster()
+        {
+            
+        }
+
         private void Navigation_Load(object sender, EventArgs e)
         {
 
         }
+
     }
 
-
-    public class Monster
-    {
-        public string Type { get; set; }
-        public float Challenge { get; set; }
-        public int PageNumber { get; set; }
-        public string Size { get; set; }
-        public string Appearance { get; set; }
-        public string Race { get; set; }
-        public string Alignment { get; set; }
-        public int ArmorClass { get; set; }
-        public int MinHP { get; set; }
-        public int MaxHP { get; set; }
-        public int Speed { get; set; }
-        public int Strength { get; set; }
-        public int Dexterity { get; set; }
-        public int Constitution { get; set; }
-        public int Intelligence { get; set; }
-        public int Wisdom { get; set; }
-        public int Charisma { get; set; }
-        public string DamageVulnerability { get; set; }
-        public string DamageResistance { get; set; }
-        public string Description { get; set; }
-        public List<string> Languages { get; set; }
-        public List<string> Senses { get; set; }
-        public List<string> Actions { get; set; }
-        public List<string> LegendaryActions { get; set; }
-        public List<string> Skills { get; set; }
-    }
 
     public class RootObject
     {

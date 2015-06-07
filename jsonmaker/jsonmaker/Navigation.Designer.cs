@@ -138,7 +138,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.conImmBox1 = new System.Windows.Forms.TextBox();
             this.damImmBox1 = new System.Windows.Forms.TextBox();
-            this.languageBox = new System.Windows.Forms.CheckedListBox();
             this.statBox = new System.Windows.Forms.GroupBox();
             this.speedBox = new System.Windows.Forms.TextBox();
             this.armorBox = new System.Windows.Forms.TextBox();
@@ -155,6 +154,8 @@
             this.pgLbl = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.chalLbl = new System.Windows.Forms.Label();
+            this.groupLanguage = new System.Windows.Forms.GroupBox();
+            this.langInput = new System.Windows.Forms.TextBox();
             this.groupSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.surviInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stealInput)).BeginInit();
@@ -194,6 +195,7 @@
             this.groupMisc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).BeginInit();
+            this.groupLanguage.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -1379,33 +1381,6 @@
             this.damImmBox1.Size = new System.Drawing.Size(546, 100);
             this.damImmBox1.TabIndex = 4;
             // 
-            // languageBox
-            // 
-            this.languageBox.FormattingEnabled = true;
-            this.languageBox.Items.AddRange(new object[] {
-            "Abyssal",
-            "Celestial",
-            "Common",
-            "Deep Speech",
-            "Draconic",
-            "Dwarvish",
-            "Elvish",
-            "Giant",
-            "Gnomish",
-            "Goblin",
-            "Halfling",
-            "Infernal",
-            "Orc",
-            "Primordial",
-            "Sylvan",
-            "Telepathic",
-            "Undercommon"});
-            this.languageBox.Location = new System.Drawing.Point(880, 231);
-            this.languageBox.Name = "languageBox";
-            this.languageBox.Size = new System.Drawing.Size(253, 169);
-            this.languageBox.Sorted = true;
-            this.languageBox.TabIndex = 5;
-            // 
             // statBox
             // 
             this.statBox.Controls.Add(this.speedBox);
@@ -1495,14 +1470,6 @@
             // 
             this.hitDInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.hitDInput.FormattingEnabled = true;
-            this.hitDInput.Items.AddRange(new object[] {
-            "d4",
-            "d6",
-            "d8",
-            "d10",
-            "d12",
-            "d20",
-            "d100"});
             this.hitDInput.Location = new System.Drawing.Point(80, 53);
             this.hitDInput.Name = "hitDInput";
             this.hitDInput.Size = new System.Drawing.Size(59, 21);
@@ -1633,14 +1600,32 @@
             this.chalLbl.Text = "Challenge";
             this.chalLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // groupLanguage
+            // 
+            this.groupLanguage.Controls.Add(this.langInput);
+            this.groupLanguage.Location = new System.Drawing.Point(880, 234);
+            this.groupLanguage.Name = "groupLanguage";
+            this.groupLanguage.Size = new System.Drawing.Size(208, 153);
+            this.groupLanguage.TabIndex = 8;
+            this.groupLanguage.TabStop = false;
+            this.groupLanguage.Text = "Languages";
+            // 
+            // langInput
+            // 
+            this.langInput.Location = new System.Drawing.Point(6, 19);
+            this.langInput.Multiline = true;
+            this.langInput.Name = "langInput";
+            this.langInput.Size = new System.Drawing.Size(194, 128);
+            this.langInput.TabIndex = 0;
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 732);
+            this.Controls.Add(this.groupLanguage);
             this.Controls.Add(this.groupMisc);
             this.Controls.Add(this.statBox);
-            this.Controls.Add(this.languageBox);
             this.Controls.Add(this.abilTab);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupScores);
@@ -1705,6 +1690,8 @@
             this.groupMisc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).EndInit();
+            this.groupLanguage.ResumeLayout(false);
+            this.groupLanguage.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1782,7 +1769,6 @@
         private System.Windows.Forms.TabControl abilTab;
         private System.Windows.Forms.TabPage abilPage1;
         private System.Windows.Forms.TabPage legendPage1;
-        private System.Windows.Forms.CheckedListBox languageBox;
         private System.Windows.Forms.GroupBox statBox;
         private System.Windows.Forms.ComboBox hitDInput;
         private System.Windows.Forms.Label hitDLbl;
@@ -1839,6 +1825,8 @@
         private System.Windows.Forms.TextBox damImmBox1;
         private System.Windows.Forms.TextBox speedBox;
         private System.Windows.Forms.TextBox armorBox;
+        private System.Windows.Forms.GroupBox groupLanguage;
+        private System.Windows.Forms.TextBox langInput;
     }
 }
 
