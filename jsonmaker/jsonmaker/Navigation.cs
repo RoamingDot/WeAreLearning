@@ -65,7 +65,7 @@ namespace jsonmaker
         {
             foreach (Monster mon in monsterList.Monster)
             {
-                monsterBox.Items.Add(mon.Type);
+                monsterBox.Items.Add(mon.Species);
             }
         }
 
@@ -149,11 +149,6 @@ namespace jsonmaker
         private void Navigation_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public class RootObject
-        {
-            public List<Monster> Monster { get; set; }
         }
 
     }
