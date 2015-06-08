@@ -166,6 +166,7 @@
             this.monsterTextBox = new System.Windows.Forms.TextBox();
             this.monsterTextTab = new System.Windows.Forms.TabControl();
             this.addMonButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.surviInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stealInput)).BeginInit();
@@ -1739,13 +1740,25 @@
             this.addMonButton.TabIndex = 9;
             this.addMonButton.Text = "<< Add to";
             this.addMonButton.UseVisualStyleBackColor = true;
+            this.addMonButton.Visible = false;
             this.addMonButton.Click += new System.EventHandler(this.addMonButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(230, 114);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 732);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.addMonButton);
             this.Controls.Add(this.groupLanguage);
             this.Controls.Add(this.groupMisc);
@@ -1966,6 +1979,7 @@
         private System.Windows.Forms.CheckBox dexCheck;
         private System.Windows.Forms.CheckBox strCheck;
         private System.Windows.Forms.Button addMonButton;
+        private System.Windows.Forms.Button button2;
     }
 }
 

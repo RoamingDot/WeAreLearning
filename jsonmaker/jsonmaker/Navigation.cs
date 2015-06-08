@@ -58,6 +58,9 @@ namespace jsonmaker
 
                     //Allow population button and refresh the monster box
                     RefreshMonsterBox();
+
+                    //Show Add To button
+                    addMonButton.Visible = true;
                 }
                 catch (Exception ex)
                 {
@@ -208,6 +211,12 @@ namespace jsonmaker
             {
                 monsterBox.Items.Add(mon.Species);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string text = "YOUNG RED SHADOW DRAGON\nLarge dragon, chaotic evil\nArmor Class 18 (natural armor)\nHit Points 178 (17d10 + 85)\nSpeed 40ft., climb 40ft., fly 80ft.\nSTR\n23 (+6)\nDEX\n10 (+0)\nCON\n21 (+5)\nINT\n14 (+2)\nWIS\n11 (+0)\nSaving Throws Dex +4, Con +9, Wis +4, Cha +8\nSkills Perception +8, Stealth +8\nDamage Resistances necrotic\nDamage Immunities fire\nCHA\n19 (+4)\nSenses blindsight 30ft., darkvision 120ft., passive Perception 18\nLanguages Common, Draconic\nChallenge 13 (10,000 XP)\nLiving Shadow. While in dim light or darkness, the dragon has\nresistance to damage that isn't force, psychic, or radiant.\nShadow Stealth. While in dim light or darkn ess, the dragon can\ntake the Hide action as a bonus action.\nSunlight Sensitivity. While in sunlight, the dragon has\ndi sadvantage on attack rolls, as well as on Wisdom\n(Perception) checks that rely on sight.\nACTIONS\nMultiattack. The dragon makes three attacks: one with its bite\nand two with its claws.\nBite. Melee Weapon Attack: +10 to hit, reach 10ft., one\ntarget. Hit: 17 (2d10 + 6) pierci ng damage plus 3 (1d6)\nnecrotic damage.\nClaw. Melee Weapon Attack: +10 to hit, reach 5 ft., one target.\nHit: 13 (2d6 + 6) slashing damage.\nShadow Breath (Recharge 5-6}. The dragon exhales shadowy\nfire in a 30-foot cone. Each creature in that area must make\na DC 18 Dexterity saving throw, taking 56 (16d6) necrotic\ndamage on a failed save, or half as much damage on a\nsuccessful one. A humanoid reduced to 0 hit points by this\ndamage dies, and an undead shadow rises from its corpse and\nacts immediately after the dragon in the initiative count. The\nshadow is under the dragon 's control.";
+            Monster test = new Monster(text);
         }
     }
 }
