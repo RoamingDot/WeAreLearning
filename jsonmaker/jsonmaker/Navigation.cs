@@ -23,6 +23,15 @@ namespace jsonmaker
 
         RootObject monsterList; //Grabs the root object of the JSON file
         OpenFileDialog openFileDialog1;
+
+        private void Navigation_Load(object sender, EventArgs e)
+        {
+            openFileDialog1 = new OpenFileDialog();
+            monsterList = new RootObject();
+
+            RefreshMonsterBox();
+            ClearForms();
+        }
         
         private void button1_Click(object sender, EventArgs e)
         {
@@ -69,7 +78,18 @@ namespace jsonmaker
 
         private void dataButton_Click(object sender, EventArgs e)
         {
-            RefreshMonsterBox();
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Json Files (*.json)|*.json";
+            saveFileDialog1.Title = "Export to JSON";
+            saveFileDialog1.ShowDialog();
+
+            if(saveFileDialog1.FileName != "")
+            {
+                File.WriteAllText(Path.GetFullPath(saveFileDialog1.FileName),
+                            JsonConvert.SerializeObject(monsterList, Formatting.Indented));
+
+                ClearForms();
+            }
         }
 
         private void monsterBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -78,11 +98,11 @@ namespace jsonmaker
             {
                 if (String.Equals(monsterBox.GetItemText(monsterBox.SelectedItem), mon.Species))
                 {
-                 
+
                     //Puts JSON into JSON box tab
                     string json = JsonConvert.SerializeObject(mon, Formatting.Indented);
                     monsterJSONBox.Text = json;
-                    
+
                     //Formats JSON into readable text and puts in Text box tab
                     //Fill box with Text
                     monsterTextBox.Text = mon.ToString();
@@ -91,50 +111,6 @@ namespace jsonmaker
             }
         }
 
-        private void FillMonster(Monster workingMonster)
-        {
-
-            workingMonster.Species = speciesBox.Text;
-            workingMonster.Challenge = challengeInput.Text;
-            workingMonster.Size = sizeInput.Text;
-            workingMonster.Alignment = alignInput.Text;
-            workingMonster.ArmorClass = armorBox.Text;
-            workingMonster.Speed = speedBox.Text;
-            workingMonster.DamageImmunity = damImmBox1.Text;
-            workingMonster.DamageResistance = damResBox1.Text;
-            workingMonster.DamageVulnerability = damVulBox1.Text;
-            workingMonster.ConditionImmunity = conImmBox1.Text;
-            workingMonster.Languages = langBox.Text;
-            workingMonster.PageNumber = (int)pageInput.Value;
-            workingMonster.HitDie = hitDInput.Text;
-            workingMonster.Strength = (int)strInput.Value;
-            workingMonster.Dexterity = (int)dexInput.Value;
-            workingMonster.Constitution = (int)conInput.Value;
-            workingMonster.Wisdom = (int)wisInput.Value;
-            workingMonster.Charisma = (int)chaInput.Value;
-            workingMonster.StrengthSave = strCheck.Checked;
-            workingMonster.DexteritySave = dexCheck.Checked;
-            workingMonster.ConstitutionSave = conCheck.Checked;
-            workingMonster.WisdomSave = wisCheck.Checked;
-            workingMonster.CharismaSave = chaCheck.Checked;
-
-            if (!string.IsNullOrWhiteSpace(senseBox1.Text))
-                workingMonster.Senses.Add(senseBox1.Text);
-            if (!string.IsNullOrWhiteSpace(senseBox2.Text))
-                workingMonster.Senses.Add(senseBox2.Text);
-            if (!string.IsNullOrWhiteSpace(senseBox3.Text))
-                workingMonster.Senses.Add(senseBox3.Text);
-            if (!string.IsNullOrWhiteSpace(senseBox4.Text))
-                workingMonster.Senses.Add(senseBox4.Text);
-            if (!string.IsNullOrWhiteSpace(senseBox5.Text))
-                workingMonster.Senses.Add(senseBox5.Text);
-            if (!string.IsNullOrWhiteSpace(senseBox6.Text))
-                workingMonster.Senses.Add(senseBox6.Text);
-            if (!string.IsNullOrWhiteSpace(senseBox7.Text))
-                workingMonster.Senses.Add(senseBox7.Text);
-
-
-        }
 
         /***
          * EVENT: TEXT CHANGED ON SPECIES BOX
@@ -173,15 +149,6 @@ namespace jsonmaker
             }
         }
 
-
-        private void Navigation_Load(object sender, EventArgs e)
-        {
-            openFileDialog1 = new OpenFileDialog();
-            monsterList = new RootObject();
-
-            RefreshMonsterBox();
-        }
-
         private void addMonButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(speciesBox.Text))
@@ -190,12 +157,44 @@ namespace jsonmaker
             }
             else
             {
-                    Monster newMonster = new Monster();
-                    FillMonster(newMonster);
+                Monster newMonster = new Monster();
+                FillMonster(newMonster);
 
-                    monsterList.Monster.Add(newMonster);
-                    RefreshMonsterBox();
+                monsterList.Monster.Add(newMonster);
+                RefreshMonsterBox();
+                ClearForms();
             }
+        }
+
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            ClearForms();
+        }
+
+        private void ClearForms()
+        {
+            foreach (Control control in groupScores.Controls)
+                Utilities.ResetControls(control, 8);
+
+            foreach (Control control in groupCharacter.Controls)
+                Utilities.ResetControls(control, 0);
+
+            foreach (Control control in groupMisc.Controls)
+                Utilities.ResetControls(control, 0);
+
+            foreach (Control control in groupStats.Controls)
+                Utilities.ResetControls(control, 1);
+
+            foreach (Control control in groupTraits.Controls)
+                Utilities.ResetControls(control, 0);
+
+            skillsBox.Text = "";
+            langBox.Text = "";
+            actioBox1.Text = "";
+            abiliBox1.Text = "";
+            legenBox1.Text = "";
+
         }
 
         private void RefreshMonsterBox()
@@ -208,6 +207,82 @@ namespace jsonmaker
             {
                 monsterBox.Items.Add(mon.Species);
             }
+
+            monsterTextBox.Text = "";
+            monsterJSONBox.Text = "";
         }
+
+        
+        private void FillMonster(Monster workingMonster)
+        {
+
+            workingMonster.Species = speciesBox.Text;
+            workingMonster.Challenge = challengeInput.Text;
+            workingMonster.Size = sizeInput.Text;
+            workingMonster.Type = typeBox.Text;
+            workingMonster.Alignment = alignInput.Text;
+            workingMonster.ArmorClass = armorBox.Text;
+            workingMonster.Speed = speedBox.Text;
+            workingMonster.DamageVulnerability = damVulBox1.Text;
+            workingMonster.DamageResistance = damResBox1.Text;
+            workingMonster.ConditionImmunity = conImmBox1.Text;
+            workingMonster.DamageImmunity = damImmBox1.Text;
+            workingMonster.Languages = langBox.Text;
+            workingMonster.PageNumber = (int)pageInput.Value;
+            workingMonster.HitDie = hitDInput.Text;
+            workingMonster.HitDieNum = (int)hitDNumInput.Value;
+            workingMonster.Strength = (int)strInput.Value;
+            workingMonster.Dexterity = (int)dexInput.Value;
+            workingMonster.Constitution = (int)conInput.Value;
+            workingMonster.Intelligence = (int)intInput.Value;
+            workingMonster.Wisdom = (int)wisInput.Value;
+            workingMonster.Charisma = (int)chaInput.Value;
+            workingMonster.StrengthSave = strCheck.Checked;
+            workingMonster.DexteritySave = dexCheck.Checked;
+            workingMonster.ConstitutionSave = conCheck.Checked;
+            workingMonster.WisdomSave = wisCheck.Checked;
+            workingMonster.CharismaSave = chaCheck.Checked;
+            workingMonster.IntelligenceSave = intCheck.Checked;
+            workingMonster.Senses = senseBox1.Text;
+            workingMonster.Skills = skillsBox.Text;
+            workingMonster.Abilities = abiliBox1.Text;
+            workingMonster.Actions = actioBox1.Text;
+            workingMonster.LegendaryActions = legenBox1.Text;
+
+        }
+
+    }
+
+    public class Utilities
+    {
+        //Neat trick for clearing forms
+        public static void ResetControls(Control control, int defaultValue)
+        {
+            if (control is TextBox)
+            {
+                TextBox textBox = (TextBox)control;
+                textBox.Text = null;
+            }
+
+            if (control is ComboBox)
+            {
+                ComboBox comboBox = (ComboBox)control;
+                if (comboBox.Items.Count > 0)
+                    comboBox.SelectedIndex = 0;
+            }
+
+            if (control is CheckBox)
+            {
+                CheckBox checkBox = (CheckBox)control;
+                checkBox.Checked = false;
+            }
+
+            if (control is NumericUpDown)
+            {
+                NumericUpDown numWheel = (NumericUpDown)control;
+                numWheel.Value = defaultValue;
+            }
+        }
+
     }
 }
