@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.textLabel1 = new System.Windows.Forms.Label();
             this.FileLocation1 = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.Button();
             this.monsterBox = new System.Windows.Forms.ListBox();
             this.monsterListLable = new System.Windows.Forms.Label();
             this.groupScores = new System.Windows.Forms.GroupBox();
@@ -107,6 +105,13 @@
             this.groupTraits = new System.Windows.Forms.GroupBox();
             this.senseLbl = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
+            this.populateButton = new System.Windows.Forms.Button();
+            this.modifyButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupScores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chaInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisInput)).BeginInit();
@@ -130,18 +135,8 @@
             this.monsterTextTab.SuspendLayout();
             this.groupSkills.SuspendLayout();
             this.groupTraits.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(15, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 23);
-            this.button1.TabIndex = 0;
-            this.button1.TabStop = false;
-            this.button1.Text = "Browse...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textLabel1
             // 
@@ -155,22 +150,11 @@
             // FileLocation1
             // 
             this.FileLocation1.AutoSize = true;
-            this.FileLocation1.Location = new System.Drawing.Point(87, 44);
+            this.FileLocation1.Location = new System.Drawing.Point(13, 39);
             this.FileLocation1.Name = "FileLocation1";
             this.FileLocation1.Size = new System.Drawing.Size(16, 13);
             this.FileLocation1.TabIndex = 3;
             this.FileLocation1.Text = "...";
-            // 
-            // saveButton
-            // 
-            this.saveButton.Location = new System.Drawing.Point(15, 68);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
-            this.saveButton.TabIndex = 4;
-            this.saveButton.TabStop = false;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.dataButton_Click);
             // 
             // monsterBox
             // 
@@ -984,7 +968,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(230, 480);
+            this.tabPage2.Size = new System.Drawing.Size(230, 466);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "JSON";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -996,7 +980,7 @@
             this.monsterJSONBox.Name = "monsterJSONBox";
             this.monsterJSONBox.ReadOnly = true;
             this.monsterJSONBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.monsterJSONBox.Size = new System.Drawing.Size(218, 468);
+            this.monsterJSONBox.Size = new System.Drawing.Size(218, 456);
             this.monsterJSONBox.TabIndex = 8;
             // 
             // tabPage1
@@ -1005,7 +989,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(230, 480);
+            this.tabPage1.Size = new System.Drawing.Size(230, 466);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Text";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1017,24 +1001,24 @@
             this.monsterTextBox.Name = "monsterTextBox";
             this.monsterTextBox.ReadOnly = true;
             this.monsterTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.monsterTextBox.Size = new System.Drawing.Size(218, 468);
+            this.monsterTextBox.Size = new System.Drawing.Size(218, 452);
             this.monsterTextBox.TabIndex = 7;
             // 
             // monsterTextTab
             // 
             this.monsterTextTab.Controls.Add(this.tabPage1);
             this.monsterTextTab.Controls.Add(this.tabPage2);
-            this.monsterTextTab.Location = new System.Drawing.Point(12, 214);
+            this.monsterTextTab.Location = new System.Drawing.Point(12, 234);
             this.monsterTextTab.Name = "monsterTextTab";
             this.monsterTextTab.SelectedIndex = 0;
-            this.monsterTextTab.Size = new System.Drawing.Size(238, 506);
+            this.monsterTextTab.Size = new System.Drawing.Size(238, 492);
             this.monsterTextTab.TabIndex = 8;
             this.monsterTextTab.TabStop = false;
             // 
             // addMonButton
             // 
             this.addMonButton.Enabled = false;
-            this.addMonButton.Location = new System.Drawing.Point(175, 185);
+            this.addMonButton.Location = new System.Drawing.Point(175, 178);
             this.addMonButton.Name = "addMonButton";
             this.addMonButton.Size = new System.Drawing.Size(75, 23);
             this.addMonButton.TabIndex = 9;
@@ -1091,7 +1075,7 @@
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(282, -1);
+            this.clearButton.Location = new System.Drawing.Point(751, 704);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(75, 23);
             this.clearButton.TabIndex = 12;
@@ -1100,11 +1084,80 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // populateButton
+            // 
+            this.populateButton.Location = new System.Drawing.Point(175, 139);
+            this.populateButton.Name = "populateButton";
+            this.populateButton.Size = new System.Drawing.Size(75, 23);
+            this.populateButton.TabIndex = 13;
+            this.populateButton.Text = "Populate >>";
+            this.populateButton.UseVisualStyleBackColor = true;
+            this.populateButton.Click += new System.EventHandler(this.populateButton_Click);
+            // 
+            // modifyButton
+            // 
+            this.modifyButton.Enabled = false;
+            this.modifyButton.Location = new System.Drawing.Point(175, 112);
+            this.modifyButton.Name = "modifyButton";
+            this.modifyButton.Size = new System.Drawing.Size(75, 23);
+            this.modifyButton.TabIndex = 14;
+            this.modifyButton.Text = "<< Modify";
+            this.modifyButton.UseVisualStyleBackColor = true;
+            this.modifyButton.Click += new System.EventHandler(this.modifyButton_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(175, 206);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Delete";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1477, 24);
+            this.menuStrip1.TabIndex = 16;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 732);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.modifyButton);
+            this.Controls.Add(this.populateButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.groupSkills);
             this.Controls.Add(this.addMonButton);
@@ -1116,12 +1169,12 @@
             this.Controls.Add(this.groupScores);
             this.Controls.Add(this.monsterListLable);
             this.Controls.Add(this.monsterBox);
-            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.FileLocation1);
             this.Controls.Add(this.textLabel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.monsterTextTab);
             this.Controls.Add(this.groupTraits);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Navigation";
             this.Text = "Navigation";
             this.Load += new System.EventHandler(this.Navigation_Load);
@@ -1160,6 +1213,8 @@
             this.groupSkills.PerformLayout();
             this.groupTraits.ResumeLayout(false);
             this.groupTraits.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1167,10 +1222,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label textLabel1;
         private System.Windows.Forms.Label FileLocation1;
-        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.ListBox monsterBox;
         private System.Windows.Forms.Label monsterListLable;
         private System.Windows.Forms.GroupBox groupScores;
@@ -1246,6 +1299,13 @@
         private System.Windows.Forms.GroupBox groupTraits;
         private System.Windows.Forms.Label senseLbl;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button populateButton;
+        private System.Windows.Forms.Button modifyButton;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
     }
 }
 
