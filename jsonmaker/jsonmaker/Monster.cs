@@ -15,6 +15,10 @@ namespace jsonmaker
  * *******************/
     public class RootObject
     {
+        public RootObject()
+        {
+            Monster = new List<Monster>();
+        }
         public List<Monster> Monster { get; set; }
 
     }
@@ -25,7 +29,7 @@ namespace jsonmaker
 * Holds a monster's possible stats
 * 
 * *******************/
-    public struct Monster
+    public class Monster
     {
         
         public string Species;
@@ -42,7 +46,7 @@ namespace jsonmaker
         public string DamageImmunity;
         public string Languages;
         public int PageNumber;
-        public int HitDie;
+        public string HitDie;
         public int HitDieNum;
         public int Strength;
         public int Dexterity;
@@ -61,12 +65,13 @@ namespace jsonmaker
         public List<string> LegendaryActions;
         public Dictionary<string, int> Skills;
 
+
     /* *********************************************
     * string Monster.ToString()
     * 
     * Returns a string with all struct member names and values on multiple lines.
     * 
-    * TODO: Figure out why it doesn't automatically convert to string on assignment.
+    * TODO: Figure out why it doesn't automatically convert to string upon assignment.
     * 
     ***********************************************/
         public override string ToString()

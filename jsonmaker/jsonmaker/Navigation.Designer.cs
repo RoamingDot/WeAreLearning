@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textLabel1 = new System.Windows.Forms.Label();
             this.FileLocation1 = new System.Windows.Forms.Label();
             this.populateButton = new System.Windows.Forms.Button();
             this.monsterBox = new System.Windows.Forms.ListBox();
             this.monsterListLable = new System.Windows.Forms.Label();
-            this.monsterTextBox = new System.Windows.Forms.TextBox();
             this.groupSkills = new System.Windows.Forms.GroupBox();
             this.surviInput = new System.Windows.Forms.NumericUpDown();
             this.surviLbl = new System.Windows.Forms.Label();
@@ -74,6 +72,12 @@
             this.arcanInput = new System.Windows.Forms.NumericUpDown();
             this.animaInput = new System.Windows.Forms.NumericUpDown();
             this.groupScores = new System.Windows.Forms.GroupBox();
+            this.chaCheck = new System.Windows.Forms.CheckBox();
+            this.wisCheck = new System.Windows.Forms.CheckBox();
+            this.intCheck = new System.Windows.Forms.CheckBox();
+            this.conCheck = new System.Windows.Forms.CheckBox();
+            this.dexCheck = new System.Windows.Forms.CheckBox();
+            this.strCheck = new System.Windows.Forms.CheckBox();
             this.chaInput = new System.Windows.Forms.NumericUpDown();
             this.wisInput = new System.Windows.Forms.NumericUpDown();
             this.intInput = new System.Windows.Forms.NumericUpDown();
@@ -87,13 +91,13 @@
             this.wisLbl = new System.Windows.Forms.Label();
             this.chaLbl = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.typeLbl = new System.Windows.Forms.Label();
-            this.appearBox = new System.Windows.Forms.TextBox();
-            this.apprLbl = new System.Windows.Forms.Label();
-            this.sizeLbl = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.speciesLbl = new System.Windows.Forms.Label();
             this.typeBox = new System.Windows.Forms.TextBox();
+            this.typeLbl = new System.Windows.Forms.Label();
+            this.sizeLbl = new System.Windows.Forms.Label();
+            this.alignInput = new System.Windows.Forms.ComboBox();
+            this.sizeInput = new System.Windows.Forms.ComboBox();
+            this.speciesBox = new System.Windows.Forms.TextBox();
             this.alignLbl = new System.Windows.Forms.Label();
             this.abilTab = new System.Windows.Forms.TabControl();
             this.abilPage1 = new System.Windows.Forms.TabPage();
@@ -143,7 +147,7 @@
             this.armorBox = new System.Windows.Forms.TextBox();
             this.speedLabel = new System.Windows.Forms.Label();
             this.armorLbl = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.hitDNumInput = new System.Windows.Forms.NumericUpDown();
             this.hitDNumLbl = new System.Windows.Forms.Label();
             this.hitDInput = new System.Windows.Forms.ComboBox();
             this.hitDLbl = new System.Windows.Forms.Label();
@@ -152,14 +156,16 @@
             this.xpLbl = new System.Windows.Forms.Label();
             this.pageInput = new System.Windows.Forms.NumericUpDown();
             this.pgLbl = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.challengeInput = new System.Windows.Forms.ComboBox();
             this.chalLbl = new System.Windows.Forms.Label();
             this.groupLanguage = new System.Windows.Forms.GroupBox();
-            this.langInput = new System.Windows.Forms.TextBox();
-            this.monsterTextTab = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.langBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.monsterJSONBox = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.monsterTextBox = new System.Windows.Forms.TextBox();
+            this.monsterTextTab = new System.Windows.Forms.TabControl();
+            this.addMonButton = new System.Windows.Forms.Button();
             this.groupSkills.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.surviInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stealInput)).BeginInit();
@@ -195,14 +201,14 @@
             this.damPage1.SuspendLayout();
             this.immPage1.SuspendLayout();
             this.statBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hitDNumInput)).BeginInit();
             this.groupMisc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).BeginInit();
             this.groupLanguage.SuspendLayout();
-            this.monsterTextTab.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.monsterTextTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -215,10 +221,6 @@
             this.button1.Text = "Browse...";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // textLabel1
             // 
@@ -240,7 +242,6 @@
             // 
             // populateButton
             // 
-            this.populateButton.Enabled = false;
             this.populateButton.Location = new System.Drawing.Point(15, 68);
             this.populateButton.Name = "populateButton";
             this.populateButton.Size = new System.Drawing.Size(75, 23);
@@ -268,16 +269,6 @@
             this.monsterListLable.Size = new System.Drawing.Size(81, 13);
             this.monsterListLable.TabIndex = 6;
             this.monsterListLable.Text = "List of Monsters";
-            // 
-            // monsterTextBox
-            // 
-            this.monsterTextBox.Location = new System.Drawing.Point(6, 6);
-            this.monsterTextBox.Multiline = true;
-            this.monsterTextBox.Name = "monsterTextBox";
-            this.monsterTextBox.ReadOnly = true;
-            this.monsterTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.monsterTextBox.Size = new System.Drawing.Size(284, 468);
-            this.monsterTextBox.TabIndex = 7;
             // 
             // groupSkills
             // 
@@ -687,6 +678,12 @@
             // 
             // groupScores
             // 
+            this.groupScores.Controls.Add(this.chaCheck);
+            this.groupScores.Controls.Add(this.wisCheck);
+            this.groupScores.Controls.Add(this.intCheck);
+            this.groupScores.Controls.Add(this.conCheck);
+            this.groupScores.Controls.Add(this.dexCheck);
+            this.groupScores.Controls.Add(this.strCheck);
             this.groupScores.Controls.Add(this.chaInput);
             this.groupScores.Controls.Add(this.wisInput);
             this.groupScores.Controls.Add(this.intInput);
@@ -706,6 +703,60 @@
             this.groupScores.TabIndex = 2;
             this.groupScores.TabStop = false;
             this.groupScores.Text = "Ability Scores";
+            // 
+            // chaCheck
+            // 
+            this.chaCheck.AutoSize = true;
+            this.chaCheck.Location = new System.Drawing.Point(265, 65);
+            this.chaCheck.Name = "chaCheck";
+            this.chaCheck.Size = new System.Drawing.Size(15, 14);
+            this.chaCheck.TabIndex = 40;
+            this.chaCheck.UseVisualStyleBackColor = true;
+            // 
+            // wisCheck
+            // 
+            this.wisCheck.AutoSize = true;
+            this.wisCheck.Location = new System.Drawing.Point(218, 65);
+            this.wisCheck.Name = "wisCheck";
+            this.wisCheck.Size = new System.Drawing.Size(15, 14);
+            this.wisCheck.TabIndex = 39;
+            this.wisCheck.UseVisualStyleBackColor = true;
+            // 
+            // intCheck
+            // 
+            this.intCheck.AutoSize = true;
+            this.intCheck.Location = new System.Drawing.Point(171, 65);
+            this.intCheck.Name = "intCheck";
+            this.intCheck.Size = new System.Drawing.Size(15, 14);
+            this.intCheck.TabIndex = 37;
+            this.intCheck.UseVisualStyleBackColor = true;
+            // 
+            // conCheck
+            // 
+            this.conCheck.AutoSize = true;
+            this.conCheck.Location = new System.Drawing.Point(125, 65);
+            this.conCheck.Name = "conCheck";
+            this.conCheck.Size = new System.Drawing.Size(15, 14);
+            this.conCheck.TabIndex = 38;
+            this.conCheck.UseVisualStyleBackColor = true;
+            // 
+            // dexCheck
+            // 
+            this.dexCheck.AutoSize = true;
+            this.dexCheck.Location = new System.Drawing.Point(77, 65);
+            this.dexCheck.Name = "dexCheck";
+            this.dexCheck.Size = new System.Drawing.Size(15, 14);
+            this.dexCheck.TabIndex = 37;
+            this.dexCheck.UseVisualStyleBackColor = true;
+            // 
+            // strCheck
+            // 
+            this.strCheck.AutoSize = true;
+            this.strCheck.Location = new System.Drawing.Point(30, 65);
+            this.strCheck.Name = "strCheck";
+            this.strCheck.Size = new System.Drawing.Size(15, 14);
+            this.strCheck.TabIndex = 36;
+            this.strCheck.UseVisualStyleBackColor = true;
             // 
             // chaInput
             // 
@@ -871,13 +922,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.typeLbl);
-            this.groupBox2.Controls.Add(this.appearBox);
-            this.groupBox2.Controls.Add(this.apprLbl);
-            this.groupBox2.Controls.Add(this.sizeLbl);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.speciesLbl);
             this.groupBox2.Controls.Add(this.typeBox);
+            this.groupBox2.Controls.Add(this.typeLbl);
+            this.groupBox2.Controls.Add(this.sizeLbl);
+            this.groupBox2.Controls.Add(this.alignInput);
+            this.groupBox2.Controls.Add(this.sizeInput);
+            this.groupBox2.Controls.Add(this.speciesBox);
             this.groupBox2.Controls.Add(this.alignLbl);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.groupBox2.Location = new System.Drawing.Point(544, 130);
@@ -887,37 +938,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Characteristics";
             // 
+            // speciesLbl
+            // 
+            this.speciesLbl.AutoSize = true;
+            this.speciesLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.speciesLbl.Location = new System.Drawing.Point(33, 19);
+            this.speciesLbl.MinimumSize = new System.Drawing.Size(0, 22);
+            this.speciesLbl.Name = "speciesLbl";
+            this.speciesLbl.Size = new System.Drawing.Size(51, 22);
+            this.speciesLbl.TabIndex = 1;
+            this.speciesLbl.Text = "Species";
+            this.speciesLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // typeBox
+            // 
+            this.typeBox.Location = new System.Drawing.Point(90, 99);
+            this.typeBox.MinimumSize = new System.Drawing.Size(4, 25);
+            this.typeBox.Name = "typeBox";
+            this.typeBox.Size = new System.Drawing.Size(160, 20);
+            this.typeBox.TabIndex = 2;
+            // 
             // typeLbl
             // 
             this.typeLbl.AutoSize = true;
             this.typeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.typeLbl.Location = new System.Drawing.Point(50, 22);
+            this.typeLbl.Location = new System.Drawing.Point(51, 96);
             this.typeLbl.MinimumSize = new System.Drawing.Size(0, 22);
             this.typeLbl.Name = "typeLbl";
             this.typeLbl.Size = new System.Drawing.Size(33, 22);
-            this.typeLbl.TabIndex = 1;
+            this.typeLbl.TabIndex = 7;
             this.typeLbl.Text = "Type";
             this.typeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // appearBox
-            // 
-            this.appearBox.Location = new System.Drawing.Point(90, 99);
-            this.appearBox.MinimumSize = new System.Drawing.Size(4, 25);
-            this.appearBox.Name = "appearBox";
-            this.appearBox.Size = new System.Drawing.Size(160, 20);
-            this.appearBox.TabIndex = 2;
-            // 
-            // apprLbl
-            // 
-            this.apprLbl.AutoSize = true;
-            this.apprLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.apprLbl.Location = new System.Drawing.Point(11, 98);
-            this.apprLbl.MinimumSize = new System.Drawing.Size(0, 22);
-            this.apprLbl.Name = "apprLbl";
-            this.apprLbl.Size = new System.Drawing.Size(73, 22);
-            this.apprLbl.TabIndex = 7;
-            this.apprLbl.Text = "Appearance";
-            this.apprLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sizeLbl
             // 
@@ -932,11 +983,11 @@
             this.sizeLbl.Text = "Size";
             this.sizeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox2
+            // alignInput
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.alignInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.alignInput.FormattingEnabled = true;
+            this.alignInput.Items.AddRange(new object[] {
             "Lawful Good",
             "Neutral Good",
             "Chaotic Good",
@@ -946,34 +997,35 @@
             "Lawful Evil",
             "Neutral Evil",
             "Chaotic Evil"});
-            this.comboBox2.Location = new System.Drawing.Point(89, 138);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 3;
+            this.alignInput.Location = new System.Drawing.Point(89, 138);
+            this.alignInput.Name = "alignInput";
+            this.alignInput.Size = new System.Drawing.Size(121, 21);
+            this.alignInput.TabIndex = 3;
             // 
-            // comboBox1
+            // sizeInput
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.sizeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.sizeInput.FormattingEnabled = true;
+            this.sizeInput.Items.AddRange(new object[] {
             "Tiny",
             "Small",
             "Medium",
             "Large",
             "Huge",
             "Gargantuan"});
-            this.comboBox1.Location = new System.Drawing.Point(89, 61);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
+            this.sizeInput.Location = new System.Drawing.Point(89, 61);
+            this.sizeInput.Name = "sizeInput";
+            this.sizeInput.Size = new System.Drawing.Size(121, 21);
+            this.sizeInput.TabIndex = 1;
             // 
-            // typeBox
+            // speciesBox
             // 
-            this.typeBox.Location = new System.Drawing.Point(89, 21);
-            this.typeBox.MinimumSize = new System.Drawing.Size(4, 25);
-            this.typeBox.Name = "typeBox";
-            this.typeBox.Size = new System.Drawing.Size(160, 20);
-            this.typeBox.TabIndex = 0;
+            this.speciesBox.Location = new System.Drawing.Point(89, 21);
+            this.speciesBox.MinimumSize = new System.Drawing.Size(4, 25);
+            this.speciesBox.Name = "speciesBox";
+            this.speciesBox.Size = new System.Drawing.Size(160, 20);
+            this.speciesBox.TabIndex = 0;
+            this.speciesBox.TextChanged += new System.EventHandler(this.speciesBox_TextChanged);
             // 
             // alignLbl
             // 
@@ -1395,7 +1447,7 @@
             this.statBox.Controls.Add(this.armorBox);
             this.statBox.Controls.Add(this.speedLabel);
             this.statBox.Controls.Add(this.armorLbl);
-            this.statBox.Controls.Add(this.numericUpDown1);
+            this.statBox.Controls.Add(this.hitDNumInput);
             this.statBox.Controls.Add(this.hitDNumLbl);
             this.statBox.Controls.Add(this.hitDInput);
             this.statBox.Controls.Add(this.hitDLbl);
@@ -1445,18 +1497,18 @@
             this.armorLbl.Text = "AC";
             this.armorLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numericUpDown1
+            // hitDNumInput
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(80, 28);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.hitDNumInput.Location = new System.Drawing.Point(80, 28);
+            this.hitDNumInput.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
-            this.numericUpDown1.TabIndex = 37;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.hitDNumInput.Name = "hitDNumInput";
+            this.hitDNumInput.Size = new System.Drawing.Size(59, 20);
+            this.hitDNumInput.TabIndex = 37;
+            this.hitDNumInput.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -1501,7 +1553,7 @@
             this.groupMisc.Controls.Add(this.xpLbl);
             this.groupMisc.Controls.Add(this.pageInput);
             this.groupMisc.Controls.Add(this.pgLbl);
-            this.groupMisc.Controls.Add(this.comboBox3);
+            this.groupMisc.Controls.Add(this.challengeInput);
             this.groupMisc.Controls.Add(this.chalLbl);
             this.groupMisc.Location = new System.Drawing.Point(545, 311);
             this.groupMisc.Name = "groupMisc";
@@ -1552,11 +1604,11 @@
             this.pgLbl.TabIndex = 54;
             this.pgLbl.Text = "Page #";
             // 
-            // comboBox3
+            // challengeInput
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.challengeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.challengeInput.FormattingEnabled = true;
+            this.challengeInput.Items.AddRange(new object[] {
             "0",
             "1/8",
             "1/4",
@@ -1591,10 +1643,10 @@
             "28",
             "29",
             "30"});
-            this.comboBox3.Location = new System.Drawing.Point(77, 22);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(71, 21);
-            this.comboBox3.TabIndex = 52;
+            this.challengeInput.Location = new System.Drawing.Point(77, 22);
+            this.challengeInput.Name = "challengeInput";
+            this.challengeInput.Size = new System.Drawing.Size(71, 21);
+            this.challengeInput.TabIndex = 52;
             // 
             // chalLbl
             // 
@@ -1610,7 +1662,7 @@
             // 
             // groupLanguage
             // 
-            this.groupLanguage.Controls.Add(this.langInput);
+            this.groupLanguage.Controls.Add(this.langBox);
             this.groupLanguage.Location = new System.Drawing.Point(880, 234);
             this.groupLanguage.Name = "groupLanguage";
             this.groupLanguage.Size = new System.Drawing.Size(208, 153);
@@ -1618,34 +1670,13 @@
             this.groupLanguage.TabStop = false;
             this.groupLanguage.Text = "Languages";
             // 
-            // langInput
+            // langBox
             // 
-            this.langInput.Location = new System.Drawing.Point(6, 19);
-            this.langInput.Multiline = true;
-            this.langInput.Name = "langInput";
-            this.langInput.Size = new System.Drawing.Size(194, 128);
-            this.langInput.TabIndex = 0;
-            // 
-            // monsterTextTab
-            // 
-            this.monsterTextTab.Controls.Add(this.tabPage1);
-            this.monsterTextTab.Controls.Add(this.tabPage2);
-            this.monsterTextTab.Location = new System.Drawing.Point(12, 214);
-            this.monsterTextTab.Name = "monsterTextTab";
-            this.monsterTextTab.SelectedIndex = 0;
-            this.monsterTextTab.Size = new System.Drawing.Size(304, 506);
-            this.monsterTextTab.TabIndex = 8;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.monsterTextBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(296, 480);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Text";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.langBox.Location = new System.Drawing.Point(6, 19);
+            this.langBox.Multiline = true;
+            this.langBox.Name = "langBox";
+            this.langBox.Size = new System.Drawing.Size(194, 128);
+            this.langBox.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -1668,11 +1699,54 @@
             this.monsterJSONBox.Size = new System.Drawing.Size(284, 468);
             this.monsterJSONBox.TabIndex = 8;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.monsterTextBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(296, 480);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Text";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // monsterTextBox
+            // 
+            this.monsterTextBox.Location = new System.Drawing.Point(6, 6);
+            this.monsterTextBox.Multiline = true;
+            this.monsterTextBox.Name = "monsterTextBox";
+            this.monsterTextBox.ReadOnly = true;
+            this.monsterTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.monsterTextBox.Size = new System.Drawing.Size(284, 468);
+            this.monsterTextBox.TabIndex = 7;
+            // 
+            // monsterTextTab
+            // 
+            this.monsterTextTab.Controls.Add(this.tabPage1);
+            this.monsterTextTab.Controls.Add(this.tabPage2);
+            this.monsterTextTab.Location = new System.Drawing.Point(12, 214);
+            this.monsterTextTab.Name = "monsterTextTab";
+            this.monsterTextTab.SelectedIndex = 0;
+            this.monsterTextTab.Size = new System.Drawing.Size(304, 506);
+            this.monsterTextTab.TabIndex = 8;
+            // 
+            // addMonButton
+            // 
+            this.addMonButton.Enabled = false;
+            this.addMonButton.Location = new System.Drawing.Point(241, 183);
+            this.addMonButton.Name = "addMonButton";
+            this.addMonButton.Size = new System.Drawing.Size(75, 23);
+            this.addMonButton.TabIndex = 9;
+            this.addMonButton.Text = "<< Add to";
+            this.addMonButton.UseVisualStyleBackColor = true;
+            this.addMonButton.Click += new System.EventHandler(this.addMonButton_Click);
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 732);
+            this.Controls.Add(this.addMonButton);
             this.Controls.Add(this.groupLanguage);
             this.Controls.Add(this.groupMisc);
             this.Controls.Add(this.statBox);
@@ -1735,18 +1809,18 @@
             this.immPage1.PerformLayout();
             this.statBox.ResumeLayout(false);
             this.statBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hitDNumInput)).EndInit();
             this.groupMisc.ResumeLayout(false);
             this.groupMisc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xpInput)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pageInput)).EndInit();
             this.groupLanguage.ResumeLayout(false);
             this.groupLanguage.PerformLayout();
-            this.monsterTextTab.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.monsterTextTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1755,13 +1829,11 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label textLabel1;
         private System.Windows.Forms.Label FileLocation1;
         private System.Windows.Forms.Button populateButton;
         private System.Windows.Forms.ListBox monsterBox;
         private System.Windows.Forms.Label monsterListLable;
-        private System.Windows.Forms.TextBox monsterTextBox;
         private System.Windows.Forms.GroupBox groupSkills;
         private System.Windows.Forms.NumericUpDown surviInput;
         private System.Windows.Forms.Label surviLbl;
@@ -1813,13 +1885,13 @@
         private System.Windows.Forms.Label wisLbl;
         private System.Windows.Forms.Label chaLbl;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label typeLbl;
-        private System.Windows.Forms.TextBox appearBox;
-        private System.Windows.Forms.Label apprLbl;
-        private System.Windows.Forms.Label sizeLbl;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label speciesLbl;
         private System.Windows.Forms.TextBox typeBox;
+        private System.Windows.Forms.Label typeLbl;
+        private System.Windows.Forms.Label sizeLbl;
+        private System.Windows.Forms.ComboBox alignInput;
+        private System.Windows.Forms.ComboBox sizeInput;
+        private System.Windows.Forms.TextBox speciesBox;
         private System.Windows.Forms.Label alignLbl;
         private System.Windows.Forms.TabControl abilTab;
         private System.Windows.Forms.TabPage abilPage1;
@@ -1828,7 +1900,7 @@
         private System.Windows.Forms.ComboBox hitDInput;
         private System.Windows.Forms.Label hitDLbl;
         private System.Windows.Forms.Label armorLbl;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown hitDNumInput;
         private System.Windows.Forms.Label hitDNumLbl;
         private System.Windows.Forms.Label speedLabel;
         private System.Windows.Forms.TabPage actionPage1;
@@ -1837,7 +1909,7 @@
         private System.Windows.Forms.Label xpLbl;
         private System.Windows.Forms.NumericUpDown pageInput;
         private System.Windows.Forms.Label pgLbl;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox challengeInput;
         private System.Windows.Forms.Label chalLbl;
         private System.Windows.Forms.TabPage sensePage1;
         private System.Windows.Forms.TextBox abiliBox4;
@@ -1881,11 +1953,19 @@
         private System.Windows.Forms.TextBox speedBox;
         private System.Windows.Forms.TextBox armorBox;
         private System.Windows.Forms.GroupBox groupLanguage;
-        private System.Windows.Forms.TextBox langInput;
-        private System.Windows.Forms.TabControl monsterTextTab;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TextBox langBox;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox monsterJSONBox;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TextBox monsterTextBox;
+        private System.Windows.Forms.TabControl monsterTextTab;
+        private System.Windows.Forms.CheckBox chaCheck;
+        private System.Windows.Forms.CheckBox wisCheck;
+        private System.Windows.Forms.CheckBox intCheck;
+        private System.Windows.Forms.CheckBox conCheck;
+        private System.Windows.Forms.CheckBox dexCheck;
+        private System.Windows.Forms.CheckBox strCheck;
+        private System.Windows.Forms.Button addMonButton;
     }
 }
 
