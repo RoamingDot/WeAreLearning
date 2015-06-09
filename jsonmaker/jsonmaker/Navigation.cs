@@ -38,10 +38,15 @@ namespace jsonmaker
 
         private void monsterBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (Monster mon in monsterList.Monster)
+            Monster mon;
+
+            try
             {
-                if (String.Equals(monsterBox.GetItemText(monsterBox.SelectedItem), mon.Species))
-                {
+                if (monsterBox.SelectedIndex < 0)
+                    MessageBox.Show("Unable to load monster from list to Text box.");
+                else
+                { 
+                    mon = monsterList.Monster[monsterBox.SelectedIndex];
 
                     //Puts JSON into JSON box tab
                     string json = JsonConvert.SerializeObject(mon, Formatting.Indented);
@@ -50,8 +55,15 @@ namespace jsonmaker
                     //Fill box with Monsters
                     monsterTextBox.Text = mon.ToString();
 
+                    populateButton.Enabled = true;
+                    deleteButton.Enabled = true;
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception caught during monster selection: " + ex);
+            }
+
         }
 
 
@@ -95,12 +107,17 @@ namespace jsonmaker
                 else
                     addMonButton.Enabled = true;
             }
-            catch
+            catch (Exception ex)
             {
-                // If there is an error, display the text using the system colors (?)
-                speciesBox.ForeColor = SystemColors.ControlText;
+                MessageBox.Show("Error occured in speciesBox_TextChanged: " + ex);
             }
         }
+
+    /**********
+    * 
+    * BUTTON CONTROLS
+    * 
+    **********/
 
         private void addMonButton_Click(object sender, EventArgs e)
         {
@@ -123,25 +140,30 @@ namespace jsonmaker
         {
             //Create a reference to the loaded monster inside the list
                 //Use selectMonster to commit edits later on
-            foreach (Monster mon in monsterList.Monster)
+            try
             {
-                if (String.Equals(monsterBox.GetItemText(monsterBox.SelectedItem), mon.Species))
+                if (monsterBox.SelectedIndex < 0)
                 {
-                    //Don't bother assigning if the name is somehow null
-                    if (!string.IsNullOrWhiteSpace(mon.Species))
-                    {
-                        selectMonster = mon;
-
-                        FillForm(selectMonster);
-
-                        //Monster loaded, turn on edit mode
-                        EditMode(true);
-                    }
-
-                    //Grab only one (first) monster; don't keep going and redo the work for duplicates
-                    break;
+                    MessageBox.Show("Please select a monster from the list.");
                 }
+                else
+                {
+                    //Use selectMonster as a reference to the monster (Edits, checking, etc.)
+                    selectMonster = monsterList.Monster[monsterBox.SelectedIndex];
+
+                    FillForm(selectMonster);
+
+                    //Monster loaded, turn on edit mode
+                    EditMode(true);
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error encountered when attempting to reference monster: " + ex);
+            }
+
+            RefreshMonsterBox(); //Refresh the monster box just in case something funky is happening
 
         }
 
@@ -173,6 +195,23 @@ namespace jsonmaker
             EditMode(false);
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (monsterBox.SelectedIndex >= 0)
+                    selectMonster = monsterList.Monster[monsterBox.SelectedIndex];
+
+                monsterList.Monster.RemoveAt(monsterBox.SelectedIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred during monster delete attempt: " + ex);
+            }
+
+            RefreshMonsterBox();
+
+        }
 
         private void clearButton_Click(object sender, EventArgs e)
         {
@@ -286,6 +325,7 @@ namespace jsonmaker
                 Utilities.ResetControls(control, 0);
 
             skillsBox.Text = "";
+            senseBox1.Text = "";
             langBox.Text = "";
             actioBox1.Text = "";
             abiliBox1.Text = "";
@@ -301,14 +341,18 @@ namespace jsonmaker
                 editMode = true;
                 addMonButton.Enabled = false;
                 modifyButton.Enabled = true;
+                monsterBox.Enabled = false;
 
             }
             else
             {
                 editMode = false;
-                addMonButton.Enabled = true;
                 modifyButton.Enabled = false;
+                monsterBox.Enabled = true;
                 selectMonster = null;
+
+                if (!string.IsNullOrWhiteSpace(speciesBox.Text))
+                    addMonButton.Enabled = true;
             }
 
         }
@@ -318,10 +362,23 @@ namespace jsonmaker
             //Get rid stale data
             monsterBox.Items.Clear();
 
-            //Load in fresh data from the monster list
-            foreach (Monster mon in monsterList.Monster)
+            if (monsterList.Monster.Count > 0)
             {
-                monsterBox.Items.Add(mon.Species);
+                //Load in fresh data from the monster list
+                foreach (Monster mon in monsterList.Monster)
+                {
+                    monsterBox.Items.Add(mon.Species);
+                }
+
+                //Allow deletion and population
+                deleteButton.Enabled = true;
+                populateButton.Enabled = true;
+            }
+            else
+            {
+                //Population and deletion are disabled
+                deleteButton.Enabled = false;
+                populateButton.Enabled = false;
             }
 
             monsterTextBox.Text = "";
@@ -405,6 +462,57 @@ namespace jsonmaker
 
         }
 
+
+    /**********
+    * 
+    * NUMERICUPDOWN ENTRY HELPERS
+    * 
+    **********/
+
+        private void strInput_Enter(object sender, EventArgs e)
+        {
+            strInput.Select(0, strInput.Text.Length);
+        }
+
+        private void dexInput_Enter(object sender, EventArgs e)
+        {
+            dexInput.Select(0, dexInput.Text.Length);
+        }
+
+        private void conInput_Enter(object sender, EventArgs e)
+        {
+            conInput.Select(0, conInput.Text.Length);
+        }
+
+        private void intInput_Enter(object sender, EventArgs e)
+        {
+            intInput.Select(0, intInput.Text.Length);
+        }
+
+        private void wisInput_Enter(object sender, EventArgs e)
+        {
+            wisInput.Select(0, wisInput.Text.Length);
+        }
+
+        private void chaInput_Enter(object sender, EventArgs e)
+        {
+            chaInput.Select(0, chaInput.Text.Length);
+        }
+
+        private void hitDNumInput_Enter(object sender, EventArgs e)
+        {
+            hitDNumInput.Select(0, hitDNumInput.Text.Length);
+        }
+
+        private void xpInput_Enter(object sender, EventArgs e)
+        {
+            xpInput.Select(0, xpInput.Text.Length);
+        }
+
+        private void pageInput_ValueChanged(object sender, EventArgs e)
+        {
+            pageInput.Select(0, pageInput.Text.Length);
+        }
     }
 
     public class Utilities
@@ -437,6 +545,7 @@ namespace jsonmaker
                 numWheel.Value = defaultValue;
             }
         }
+
 
     }
 }
