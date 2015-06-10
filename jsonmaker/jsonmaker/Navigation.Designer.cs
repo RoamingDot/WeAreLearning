@@ -85,7 +85,6 @@
             this.xpLbl = new System.Windows.Forms.Label();
             this.pageInput = new System.Windows.Forms.NumericUpDown();
             this.pgLbl = new System.Windows.Forms.Label();
-            this.challengeInput = new System.Windows.Forms.ComboBox();
             this.chalLbl = new System.Windows.Forms.Label();
             this.groupLanguage = new System.Windows.Forms.GroupBox();
             this.langBox = new System.Windows.Forms.TextBox();
@@ -113,6 +112,8 @@
             this.legenBox1 = new System.Windows.Forms.TextBox();
             this.actioBox1 = new System.Windows.Forms.TextBox();
             this.actionsTabPage = new System.Windows.Forms.TabPage();
+            this.buttonPaste = new System.Windows.Forms.Button();
+            this.challengeInput = new System.Windows.Forms.ComboBox();
             this.groupScores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chaInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisInput)).BeginInit();
@@ -1191,6 +1192,59 @@
             this.actionsTabPage.TabIndex = 2;
             this.actionsTabPage.Text = "Actions";
             this.actionsTabPage.UseVisualStyleBackColor = true;
+            // buttonPaste
+            // 
+            this.buttonPaste.Location = new System.Drawing.Point(679, 704);
+            this.buttonPaste.Name = "buttonPaste";
+            this.buttonPaste.Size = new System.Drawing.Size(66, 23);
+            this.buttonPaste.TabIndex = 17;
+            this.buttonPaste.Text = "Paste Text";
+            this.buttonPaste.UseVisualStyleBackColor = true;
+            this.buttonPaste.Click += new System.EventHandler(this.buttonPaste_Click);
+            // 
+            // challengeInput
+            // 
+            this.challengeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.challengeInput.FormattingEnabled = true;
+            this.challengeInput.Items.AddRange(new object[] {
+            "0",
+            "1/8",
+            "1/4",
+            "1/2",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.challengeInput.Location = new System.Drawing.Point(77, 22);
+            this.challengeInput.Name = "challengeInput";
+            this.challengeInput.Size = new System.Drawing.Size(71, 21);
+            this.challengeInput.TabIndex = 52;
             // 
             // Navigation
             // 
@@ -1200,6 +1254,8 @@
             this.Controls.Add(this.actionsTab);
             this.Controls.Add(this.groupSense);
             this.Controls.Add(this.deleteButton);
+            this.Controls.Add(this.buttonPaste);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.modifyButton);
             this.Controls.Add(this.populateButton);
             this.Controls.Add(this.clearButton);
@@ -1309,7 +1365,6 @@
         private System.Windows.Forms.Label xpLbl;
         private System.Windows.Forms.NumericUpDown pageInput;
         private System.Windows.Forms.Label pgLbl;
-        private System.Windows.Forms.ComboBox challengeInput;
         private System.Windows.Forms.Label chalLbl;
         private System.Windows.Forms.TextBox abiliBox1;
         private System.Windows.Forms.Label label2;
@@ -1354,6 +1409,9 @@
         private System.Windows.Forms.TextBox legenBox1;
         private System.Windows.Forms.TabPage actionsTabPage;
         private System.Windows.Forms.TextBox actioBox1;
+        private System.Windows.Forms.Button buttonPaste;
+        private System.Windows.Forms.ComboBox challengeInput;
+
     }
 }
 
