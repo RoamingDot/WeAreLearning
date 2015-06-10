@@ -285,6 +285,7 @@ namespace jsonmaker
 
             //Remove Speed from string
             substr = substr.Replace("Speed ", "");
+            substr = substr.Trim();
 
             //Remove Speed from text
             text = text.Remove(0, text.IndexOf('\n'));
@@ -670,21 +671,18 @@ namespace jsonmaker
         {
             string substr = text;
 
-            //Used for ToTitleCase
-            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
-            TextInfo textInfo = cultureInfo.TextInfo;
-
             //Remove "Lanaguages " from text
             text = text.Replace("Languages ", "");
 
             //Get Languages
             substr = text.Substring(0, text.IndexOf("Challenge"));
+            substr = substr.Trim();
 
             //Remove Languages substring from text
             text = text.Remove(0, substr.Length);
             text = text.Trim();
 
-            return textInfo.ToTitleCase(substr.ToLower());
+            return substr;
         }
 
 
