@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
+using System.Globalization;
+using System.Threading;
 
 
 namespace jsonmaker
@@ -215,8 +217,377 @@ namespace jsonmaker
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string text = "YOUNG RED SHADOW DRAGON\nLarge dragon, chaotic evil\nArmor Class 18 (natural armor)\nHit Points 178 (17d10 + 85)\nSpeed 40ft., climb 40ft., fly 80ft.\nSTR\n23 (+6)\nDEX\n10 (+0)\nCON\n21 (+5)\nINT\n14 (+2)\nWIS\n11 (+0)\nSaving Throws Dex +4, Con +9, Wis +4, Cha +8\nSkills Perception +8, Stealth +8\nDamage Resistances necrotic\nDamage Immunities fire\nCHA\n19 (+4)\nSenses blindsight 30ft., darkvision 120ft., passive Perception 18\nLanguages Common, Draconic\nChallenge 13 (10,000 XP)\nLiving Shadow. While in dim light or darkness, the dragon has\nresistance to damage that isn't force, psychic, or radiant.\nShadow Stealth. While in dim light or darkn ess, the dragon can\ntake the Hide action as a bonus action.\nSunlight Sensitivity. While in sunlight, the dragon has\ndi sadvantage on attack rolls, as well as on Wisdom\n(Perception) checks that rely on sight.\nACTIONS\nMultiattack. The dragon makes three attacks: one with its bite\nand two with its claws.\nBite. Melee Weapon Attack: +10 to hit, reach 10ft., one\ntarget. Hit: 17 (2d10 + 6) pierci ng damage plus 3 (1d6)\nnecrotic damage.\nClaw. Melee Weapon Attack: +10 to hit, reach 5 ft., one target.\nHit: 13 (2d6 + 6) slashing damage.\nShadow Breath (Recharge 5-6}. The dragon exhales shadowy\nfire in a 30-foot cone. Each creature in that area must make\na DC 18 Dexterity saving throw, taking 56 (16d6) necrotic\ndamage on a failed save, or half as much damage on a\nsuccessful one. A humanoid reduced to 0 hit points by this\ndamage dies, and an undead shadow rises from its corpse and\nacts immediately after the dragon in the initiative count. The\nshadow is under the dragon 's control.";
-            Monster test = new Monster(text);
+            string text = "YOUNG RED SHADOW DRAGON\nLarge dragon, chaotic evil\nArmor Class 18 (natural armor)\nHit Points 178 (17d10 + 85)\nSpeed 40ft., climb 40ft., fly 80ft.\nSTR\n23 (+6)\nDEX\n10 (+0)\nCON\n21 (+5)\nINT\n14 (+2)\nWIS\n11 (+0)\nSaving Throws Dex +4, Con +9, Wis +4, Cha +8\nSkills Perception +8, Stealth +8\nDamage Resistances necrotic\nDamage Immunities fire\nCHA\n19 (+4)\nSenses blindsight 30ft., darkvision 120ft.,\n passive Perception 18\nLanguages Common, Draconic\nChallenge 13 (10,000 XP)\nLiving Shadow. While in dim light or darkness, the dragon has\nresistance to damage that isn't force, psychic, or radiant.\nShadow Stealth. While in dim light or darkn ess, the dragon can\ntake the Hide action as a bonus action.\nSunlight Sensitivity. While in sunlight, the dragon has\ndi sadvantage on attack rolls, as well as on Wisdom\n(Perception) checks that rely on sight.\nACTIONS\nMultiattack. The dragon makes three attacks: one with its bite\nand two with its claws.\nBite. Melee Weapon Attack: +10 to hit, reach 10ft., one\ntarget. Hit: 17 (2d10 + 6) pierci ng damage plus 3 (1d6)\nnecrotic damage.\nClaw. Melee Weapon Attack: +10 to hit, reach 5 ft., one target.\nHit: 13 (2d6 + 6) slashing damage.\nShadow Breath (Recharge 5-6}. The dragon exhales shadowy\nfire in a 30-foot cone. Each creature in that area must make\na DC 18 Dexterity saving throw, taking 56 (16d6) necrotic\ndamage on a failed save, or half as much damage on a\nsuccessful one. A humanoid reduced to 0 hit points by this\ndamage dies, and an undead shadow rises from its corpse and\nacts immediately after the dragon in the initiative count. The\nshadow is under the dragon 's control.";
+            Monster mon = new Monster();
+
+            List<string> stats = new List<string> { "STR", "DEX", "CON", "INT", "WIS", "CHA" };
+            List<string> sizes = new List<string> { "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan" };
+            List<string> alignments = new List<string>{"Unaligned", "Lawful Good", "Lawful Neutral", "Lawful Evil", "Neutral Good", "True Neutral",
+                "Neutral Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"};
+
+            //Text Blob
+            text = text.Trim();
+            string substr = text;
+            int indexOfSize = 0;
+            bool badData = true;
+            
+            //Used for ToTitleCase
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+
+
+            //Grab beginning text to reduce chance of misread
+            if (text.Length > 120)
+                substr = text.Substring(0, 120);
+
+            //Text is considered good if it contains a size
+            foreach (string s in sizes)
+            {
+                if (substr.Contains(s))
+                {
+                    badData = false;
+                    indexOfSize = text.IndexOf(s);
+                }
+            }
+            
+            //Don't make a monster
+            if (badData)
+            {
+                System.Windows.Forms.MessageBox.Show("Bad text grabbed.\nGrab text starting at or before Size.");
+                return;
+            }
+
+
+            //Get Species in monster if it exists
+            if(text.Substring(0, indexOfSize).Length != 0)
+            {
+                substr = text.Substring(0, text.IndexOf("\n"));
+                mon.Species = textInfo.ToTitleCase(substr.ToLower());
+            }
+            //Remove Species text and whitespace
+            text = text.Remove(0, indexOfSize);
+            text = text.Trim();
+
+            
+            //Get Size
+            substr = text.Substring(0, text.IndexOf(' '));
+            if (sizes.Any(s => s.Equals(substr, StringComparison.OrdinalIgnoreCase)))
+            {
+                mon.Size = substr;
+            }
+            //Removes Size from string
+            text = text.Remove(0, substr.Length);
+            text = text.Trim();
+
+            //Get Type
+            substr = text.Substring(0, text.IndexOf(','));
+            mon.Type = textInfo.ToTitleCase(substr.ToLower());
+            //Remove Type and ',' from string
+            text = text.Remove(0, substr.Length + 1);
+            text = text.Trim();
+
+            //Get Alignment
+            substr = text.Substring(0, text.IndexOf('\n'));
+            if (alignments.Any(s => s.Equals(substr, StringComparison.OrdinalIgnoreCase)))
+            {
+                mon.Alignment = textInfo.ToTitleCase(substr.ToLower());
+            }
+            //Removes Alignment from string
+            text = text.Remove(0, substr.Length);
+            text = text.Trim();
+
+
+            //Get Armor Class
+            substr = text.Substring(0, text.IndexOf('\n'));
+            mon.ArmorClass = textInfo.ToTitleCase(substr.ToLower());
+            //Remove Armor Class from stiring
+            text = text.Remove(0, substr.Length);
+            text = text.Trim();
+
+            //Remove average health from string
+            text = text.Remove(0, text.IndexOf('('));
+            //Get Number of Hit Die
+            substr = text.Substring(1, text.IndexOf('d')-1);
+            mon.HitDieNum = Convert.ToInt32(substr);
+            //Remove Number of Hit Die  and '(' from string
+            text = text.Remove(0, substr.Length + 1);
+
+            //Get Hit Die
+            substr = text.Substring(0, text.IndexOf(' '));
+            mon.HitDie = substr;
+            //Remove Hit Die from string
+            text = text.Remove(0, text.IndexOf('\n'));
+            text = text.Trim();
+
+            //Get Speed
+            substr = text.Substring(0, text.IndexOf('\n'));
+            mon.Speed = substr;
+            //Remove Speed from string
+            text = text.Remove(0, text.IndexOf('\n'));
+            text = text.Trim();
+
+            //Gets all text before actions
+            //so they dont mess up parse
+            substr = text.Substring(0, text.IndexOf("XP)"));
+
+            //For every stat
+            foreach (string s in stats)
+            {
+                //Remove Everything before each stat
+                substr = substr.Remove(0, substr.IndexOf(s) + 3);
+                substr = substr.Trim();
+                switch (s)
+                {
+                    case "STR":
+                        mon.Strength = Convert.ToInt32(substr.Substring(0, substr.IndexOf('(') - 1));                            
+                        break;
+                    case "DEX":
+                        mon.Dexterity = Convert.ToInt32(substr.Substring(0, substr.IndexOf('(') - 1));
+                        break;
+                    case "CON":
+                        mon.Constitution = Convert.ToInt32(substr.Substring(0, substr.IndexOf('(') - 1));
+                        break;
+                    case "INT":
+                        mon.Intelligence = Convert.ToInt32(substr.Substring(0, substr.IndexOf('(') - 1));
+                        break;
+                    case "WIS":
+                        mon.Wisdom = Convert.ToInt32(substr.Substring(0, substr.IndexOf('(') - 1));
+                        break;
+                    case "CHA":
+                        mon.Charisma = Convert.ToInt32(substr.Substring(0, substr.IndexOf('(') - 1));
+                        break;         
+                }
+                text = text.Remove(text.IndexOf(s), text.IndexOf(')') - text.IndexOf(s) + 1);
+            }
+            text = text.Trim();
+
+
+
+            //If Saving Throws Exists in text
+            //Get Saving Throws
+            if (text.Substring(0, 10).Contains("Saving"))
+            {
+                substr = text.Substring(0, text.IndexOf("XP)"));
+
+                //Get Saving Throws
+                foreach (string s in stats)
+                {
+                    if (substr.Contains(textInfo.ToTitleCase(s)))
+                    {
+                        switch (textInfo.ToTitleCase(s))
+                        {
+                            case "Str":
+                                mon.StrengthSave = true;
+                                break;
+                            case "Dex":
+                                mon.DexteritySave = true;
+                                break;
+                            case "Con":
+                                mon.ConstitutionSave = true;
+                                break;
+                            case "Int":
+                                mon.IntelligenceSave = true;
+                                break;
+                            case "Wis":
+                                mon.WisdomSave = true;
+                                break;
+                            case "Cha":
+                                mon.CharismaSave = true;
+                                break;
+                        }
+                    }
+                }
+
+                //Remove Saving Throws from text
+                text = text.Remove(0, text.IndexOf('\n'));
+                text = text.Trim();
+            }
+
+            //If Skills Exist in text
+            //Get Skills
+            if (text.Substring(0, 10).Contains("Skills"))
+            {
+
+                //Remove "Skills " from text
+                text = text.Replace("Skills ", "");
+                substr = text.Substring(0, text.IndexOf("Senses"));
+
+                string temp;
+                int tempNum;
+
+                //Loop until no more ',' in skills
+                do
+                {
+                    temp = substr.Substring(0, substr.IndexOf('+') - 1);
+                    temp.Trim();
+                    substr = substr.Remove(0, substr.IndexOf('+') + 1);
+                    tempNum = Convert.ToInt32(substr.Substring(0, substr.IndexOf(',')));
+                    mon.Skills.Add(temp, tempNum);
+                    substr = substr.Remove(0, substr.IndexOf(',') + 1);
+                    substr = substr.Trim();
+
+                } while (substr.Contains(','));
+
+                //Get Last Skill
+                temp = substr.Substring(0, substr.IndexOf('+') - 1);
+                temp.Trim();
+                substr = substr.Remove(0, substr.IndexOf('+') + 1);
+                tempNum = Convert.ToInt32(substr.Substring(0,substr.IndexOf('\n')));
+                mon.Skills.Add(temp, tempNum);
+
+                //Remove Skills from text
+                text = text.Remove(0, text.IndexOf('\n'));
+                text = text.Trim();
+            }
+
+            //If Damage Vulnerabilities Exist in Text
+            //Get Damage Vulnerabilities
+            if (text.Substring(0, 14).Contains("Damage V"))
+            {
+                text = text.Replace("Damage Vulnerabilities ", "");
+
+                //Damage Vulnerabilities may have new line char so
+                //must make substr go until first upper case letter
+                var index = from ch in text
+                            where Char.IsUpper(ch)
+                            select text.IndexOf(ch);
+
+                substr = text.Substring(0, Convert.ToInt32(index.First()));
+
+                //Replace New lines with space
+                substr = substr.Replace('\n', ' ');
+
+                mon.DamageVulnerability = textInfo.ToTitleCase(substr.ToLower());
+                //Remove Damage Vulnerabilities from string
+                text = text.Remove(0, substr.Length);
+                text = text.Trim();
+            }
+
+            //If Damage Resistances Exist in Text
+            //Get Damage Resistances
+            if (text.Substring(0, 10).Contains("Damage R"))
+            {
+                
+                text = text.Replace("Damage Resistances ", "");
+
+                //Damage resistances may have new line char so
+                //must make substr go until first upper case letter
+                var index = from ch in text
+                            where Char.IsUpper(ch)
+                            select text.IndexOf(ch);
+
+                substr = text.Substring(0, Convert.ToInt32(index.First()));
+
+                //Replace New lines with space
+                substr = substr.Replace('\n', ' ');
+
+                mon.DamageResistance = textInfo.ToTitleCase(substr.ToLower());
+                //Remove Armor Class from string
+                text = text.Remove(0, substr.Length);
+                text = text.Trim();
+            }
+
+
+            //If Damage Immunities Exist in Text
+            //Get Damage Immunities
+            if (text.Substring(0, 10).Contains("Damage I"))
+            {                
+                text = text.Replace("Damage Immunities ", "");
+
+                //Damage Immunities may have new line char so
+                //must make substr go until first upper case letter
+                var index = from ch in text
+                            where Char.IsUpper(ch)
+                            select text.IndexOf(ch);
+
+                substr = text.Substring(0, Convert.ToInt32(index.First()));
+
+                //Replace New lines with space
+                substr = substr.Replace('\n', ' ');
+
+                mon.DamageImmunity = textInfo.ToTitleCase(substr.ToLower());
+                //Remove Damage Immunities from string
+                text = text.Remove(0, substr.Length);
+                text = text.Trim();
+            }
+
+            //If Condition Immunities Exist in Text
+            //Get Condition Immunities
+            if (text.Substring(0, 14).Contains("Condition I"))
+            {
+                text = text.Replace("Condition Immunities ", "");
+
+                //Condition Immunities may have new line char so
+                //must make substr go until first upper case letter
+                var index = from ch in text
+                            where Char.IsUpper(ch)
+                            select text.IndexOf(ch);
+
+                substr = text.Substring(0, Convert.ToInt32(index.First()));
+
+                //Replace New lines with space
+                substr = substr.Replace('\n', ' ');
+
+                mon.ConditionImmunity = textInfo.ToTitleCase(substr.ToLower());
+                //Remove Condition Immunities from string
+                text = text.Remove(0, substr.Length);
+                text = text.Trim();
+            }
+
+            //If Senses Exist in Text
+            //Get Senses
+            if (text.Substring(0, 14).Contains("Senses"))
+            {
+
+                //Remove "Senses " from text
+                text = text.Replace("Senses ", "");
+                substr = text.Substring(0, text.IndexOf("Languages"));
+
+                string temp;
+                
+
+                //Loop until no more ',' in senses
+                do
+                {
+                    temp = substr.Substring(0, substr.IndexOf(',') - 1);
+                    temp.Trim();
+                    mon.Senses.Add(temp);
+                    substr = substr.Remove(0, substr.IndexOf(',') + 1);
+                    substr = substr.Trim();
+
+                } while (substr.Contains(','));
+
+                //Get Last Sense
+
+                mon.Senses.Add(substr);
+
+                //Remove Senses from text
+                text = text.Remove(0, text.IndexOf("Languages"));
+                text = text.Trim();
+            }
+
+
+            //Get Languages
+            //Remove "Lanaguages " from text
+            text = text.Replace("Languages ", "");
+            substr = text.Substring(0, text.IndexOf("Challenge"));
+
+            mon.Languages = textInfo.ToTitleCase(substr.ToLower());
+
+            //Remove Languages substring from text
+            text = text.Remove(0, substr.Length);
+            text = text.Trim();
+
+
+            //Get Challenge Level
+            text = text.Replace("Challenge ", "");
+            substr = text.Substring(0, text.IndexOf('('));
+            mon.Challenge = substr;
+
+
+
+
+            System.Diagnostics.Debug.WriteLine(text);
         }
     }
 }

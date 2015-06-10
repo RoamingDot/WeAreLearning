@@ -76,56 +76,6 @@ namespace jsonmaker
         }
 
 
-
-
-        public Monster(string text)
-        {
-
-            List<string> sizes = new List<string>{ "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan" };
-            List<string> alignments = new List<string>{"Unaligned", "Lawful Good", "Lawful Neutral", "Lawful Evil", "Neutral Good", "True Neutral",
-                "Neutral Evil", "Chaotic Good", "Chaotic Neutral", "Chaotic Evil"};
-
-            text = text.Trim();
-            string substr;
-            int indexOfParseStart = 0;
-            bool badData = true;
-            foreach (string s in sizes)
-            {
-                if (text.Contains(s))
-                {
-                    badData = false;
-                    indexOfParseStart = text.IndexOf(s);
-                }
-            }
-            if(badData)
-            {
-                System.Windows.Forms.MessageBox.Show("Bad text grabbed.\nGrab text starting at Size.");                
-            }
-
-            text = text.Remove(0, indexOfParseStart);
-
-            //stores then removes the size from the string
-            substr = text.Substring(0, text.IndexOf(' '));
-            if (sizes.Any( s => s.Equals(substr, StringComparison.OrdinalIgnoreCase)))
-            {
-                this.Size = substr;
-            }
-            text = text.Remove(0, substr.Length +1);
-            //------------------------
-
-            substr = text.Substring(0, text.IndexOf(','));
-            this.Type = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(substr.ToLower());
-            text = text.Remove(0, substr.Length + 1);
-            text = text.Trim();
-
-            System.Diagnostics.Debug.WriteLine(text);
-
-
-        }
-
-
-
-
     /* *********************************************
     * string Monster.ToString()
     * 
