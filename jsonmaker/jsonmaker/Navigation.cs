@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
-
+using System.Globalization;
+using System.Threading;
 
 namespace jsonmaker
 {
@@ -179,6 +180,27 @@ namespace jsonmaker
             ClearForms();
         }
 
+        
+        private void buttonPaste_Click(object sender, EventArgs e)
+        {
+            string pastedText;
+            using (GetPastedTextForm form = new GetPastedTextForm())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    
+                }
+                pastedText = form.getText;
+            }
+
+            if (pastedText != "")
+            {
+                Monster tempMon = new Monster(pastedText);
+                FillForm(tempMon);
+                tempMon = null;
+            }
+        }
+
     /**********
     * 
     * MENU STRIP TOOLS
@@ -261,6 +283,8 @@ namespace jsonmaker
                 ClearForms();
             }
         }
+
+
 
     /**********
     * 
@@ -359,8 +383,8 @@ namespace jsonmaker
             workingMonster.WisdomSave = wisCheck.Checked;
             workingMonster.CharismaSave = chaCheck.Checked;
             workingMonster.IntelligenceSave = intCheck.Checked;
-            workingMonster.Senses = senseBox1.Text;
-            workingMonster.Skills = skillsBox.Text;
+            getSenses(senseBox1.Text, ref workingMonster);
+            getSkills(skillsBox.Text, ref workingMonster);
             workingMonster.Abilities = abiliBox1.Text;
             workingMonster.Actions = actioBox1.Text;
             workingMonster.LegendaryActions = legenBox1.Text;
@@ -397,13 +421,130 @@ namespace jsonmaker
            wisCheck.Checked = inputMonster.WisdomSave;
            chaCheck.Checked = inputMonster.CharismaSave;
            intCheck.Checked = inputMonster.IntelligenceSave;
-           senseBox1.Text = inputMonster.Senses;
-           skillsBox.Text = inputMonster.Skills;
+           senseBox1.Text = string.Join(", ",inputMonster.Senses.ToArray());
+           skillsBox.Text = skillsToText(inputMonster.Skills);
            abiliBox1.Text = inputMonster.Abilities;
            actioBox1.Text = inputMonster.Actions;
            legenBox1.Text = inputMonster.LegendaryActions;
 
         }
+
+        private void getSkills(string text, ref Monster mon)
+        {
+            if (text == "")
+                return;
+
+            if(mon.Skills.Count != 0)
+                mon.Skills.Clear();
+
+            text += "\n";
+
+            List<string> stats = new List<string> { "STR", "DEX", "CON", "INT", "WIS", "CHA" };
+
+            //Used for ToTitleCase
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+
+            string temp;
+            int tempNum;
+
+            //Loop until no more ',' in skills
+            while (text.Contains(','))
+            {
+                try
+                {
+                    temp = text.Substring(0, text.IndexOf('+') - 1);
+                    temp.TrimStart();
+                    text = text.Remove(0, text.IndexOf('+') + 1);
+                    tempNum = Convert.ToInt32(text.Substring(0, text.IndexOf(',')));
+                    mon.Skills.Add(temp, tempNum);
+                    text = text.Remove(0, text.IndexOf(',') + 1);
+                    text = text.TrimStart();
+                }
+                #pragma warning disable 0168
+                catch (ArgumentOutOfRangeException e)
+                #pragma warning restore 0168
+                {
+                    text = text.Remove(0, text.IndexOf(',') + 1);
+                }
+
+            }
+
+            //Get Last Skill
+            try
+            {
+                temp = text.Substring(0, text.IndexOf('+') - 1);
+                text = text.Remove(0, text.IndexOf('+') + 1);
+                tempNum = Convert.ToInt32(text.Substring(0, text.IndexOf('\n')));
+                mon.Skills.Add(temp, tempNum);
+            }
+            #pragma warning disable 0168
+            catch (ArgumentOutOfRangeException e)
+            #pragma warning restore 0168
+            {
+                temp = "BadInput"; ;
+                tempNum = 0;
+                mon.Skills.Add(temp, tempNum);
+            }
+
+
+            return;
+        }
+
+        private void getSenses(string text, ref Monster mon)
+        {
+            if (text == "")
+                return;
+
+            if(mon.Senses.Count != 0)
+                mon.Senses.Clear();
+
+            text += "";
+
+            string substr = text;
+
+            //Used for ToTitleCase
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+
+            string temp;
+
+            //Loop until no more ',' in senses
+            while (substr.Contains(','))
+            {
+                temp = substr.Substring(0, substr.IndexOf(',') - 1);
+                temp.Trim();
+                mon.Senses.Add(temp);
+                substr = substr.Remove(0, substr.IndexOf(',') + 1);
+                substr = substr.Trim();
+
+            }
+
+            //Add Last Sense
+            mon.Senses.Add(substr);
+        }
+
+        //SKILLS TO TEXT HELPER
+        private string skillsToText(Dictionary<string, int> skills)
+        {
+            if (skills.Count == 0)
+                return "";
+
+            string text = "";
+            foreach (KeyValuePair<string, int>s in skills)
+            {
+                text += s.Key + " +" + s.Value + ',';
+            }
+            text = text.Remove(text.Length - 1);
+
+            return text;
+        }
+
+        //END OF TEXT TO MONSTER HELPER FUNCTIONS
+        //***************************************
+
+
+
 
     }
 

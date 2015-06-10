@@ -90,7 +90,6 @@
             this.xpLbl = new System.Windows.Forms.Label();
             this.pageInput = new System.Windows.Forms.NumericUpDown();
             this.pgLbl = new System.Windows.Forms.Label();
-            this.challengeInput = new System.Windows.Forms.ComboBox();
             this.chalLbl = new System.Windows.Forms.Label();
             this.groupLanguage = new System.Windows.Forms.GroupBox();
             this.langBox = new System.Windows.Forms.TextBox();
@@ -112,6 +111,8 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonPaste = new System.Windows.Forms.Button();
+            this.challengeInput = new System.Windows.Forms.ComboBox();
             this.groupScores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chaInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisInput)).BeginInit();
@@ -888,50 +889,6 @@
             this.pgLbl.TabIndex = 54;
             this.pgLbl.Text = "Page #";
             // 
-            // challengeInput
-            // 
-            this.challengeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.challengeInput.FormattingEnabled = true;
-            this.challengeInput.Items.AddRange(new object[] {
-            "0",
-            "1/8",
-            "1/4",
-            "1/2",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.challengeInput.Location = new System.Drawing.Point(77, 22);
-            this.challengeInput.Name = "challengeInput";
-            this.challengeInput.Size = new System.Drawing.Size(71, 21);
-            this.challengeInput.TabIndex = 52;
-            // 
             // chalLbl
             // 
             this.chalLbl.AutoSize = true;
@@ -1138,7 +1095,7 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -1146,15 +1103,70 @@
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // buttonPaste
+            // 
+            this.buttonPaste.Location = new System.Drawing.Point(679, 704);
+            this.buttonPaste.Name = "buttonPaste";
+            this.buttonPaste.Size = new System.Drawing.Size(66, 23);
+            this.buttonPaste.TabIndex = 17;
+            this.buttonPaste.Text = "Paste Text";
+            this.buttonPaste.UseVisualStyleBackColor = true;
+            this.buttonPaste.Click += new System.EventHandler(this.buttonPaste_Click);
+            // 
+            // challengeInput
+            // 
+            this.challengeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.challengeInput.FormattingEnabled = true;
+            this.challengeInput.Items.AddRange(new object[] {
+            "0",
+            "1/8",
+            "1/4",
+            "1/2",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.challengeInput.Location = new System.Drawing.Point(77, 22);
+            this.challengeInput.Name = "challengeInput";
+            this.challengeInput.Size = new System.Drawing.Size(71, 21);
+            this.challengeInput.TabIndex = 52;
             // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1477, 732);
+            this.Controls.Add(this.buttonPaste);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.modifyButton);
             this.Controls.Add(this.populateButton);
@@ -1264,7 +1276,6 @@
         private System.Windows.Forms.Label xpLbl;
         private System.Windows.Forms.NumericUpDown pageInput;
         private System.Windows.Forms.Label pgLbl;
-        private System.Windows.Forms.ComboBox challengeInput;
         private System.Windows.Forms.Label chalLbl;
         private System.Windows.Forms.TextBox abiliBox1;
         private System.Windows.Forms.TextBox actioBox1;
@@ -1306,6 +1317,8 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Button buttonPaste;
+        private System.Windows.Forms.ComboBox challengeInput;
     }
 }
 
