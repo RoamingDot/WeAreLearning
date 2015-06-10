@@ -487,6 +487,7 @@ namespace jsonmaker
         }
 
 
+<<<<<<< HEAD
     /**********
     * 
     * NUMERICUPDOWN ENTRY HELPERS
@@ -538,6 +539,8 @@ namespace jsonmaker
             pageInput.Select(0, pageInput.Text.Length);
         }
 
+=======
+>>>>>>> origin/TextParser
         private void getSkills(string text, ref Monster mon)
         {
             if (text == "")
@@ -654,7 +657,11 @@ namespace jsonmaker
 
 
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> origin/TextParser
     }
 
     public class Utilities

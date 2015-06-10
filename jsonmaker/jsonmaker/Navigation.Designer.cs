@@ -104,6 +104,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupSense = new System.Windows.Forms.GroupBox();
             this.senseBox1 = new System.Windows.Forms.TextBox();
@@ -114,6 +115,11 @@
             this.actionsTabPage = new System.Windows.Forms.TabPage();
             this.buttonPaste = new System.Windows.Forms.Button();
             this.challengeInput = new System.Windows.Forms.ComboBox();
+=======
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonPaste = new System.Windows.Forms.Button();
+            this.challengeInput = new System.Windows.Forms.ComboBox();
+>>>>>>> origin/TextParser
             this.groupScores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chaInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wisInput)).BeginInit();
@@ -863,6 +869,7 @@
             this.pgLbl.Size = new System.Drawing.Size(46, 15);
             this.pgLbl.TabIndex = 54;
             this.pgLbl.Text = "Page #";
+<<<<<<< HEAD
             // 
             // challengeInput
             // 
@@ -908,6 +915,9 @@
             this.challengeInput.Size = new System.Drawing.Size(71, 21);
             this.challengeInput.TabIndex = 0;
             // 
+=======
+            // 
+>>>>>>> origin/TextParser
             // chalLbl
             // 
             this.chalLbl.AutoSize = true;
@@ -1246,9 +1256,64 @@
             this.challengeInput.Size = new System.Drawing.Size(71, 21);
             this.challengeInput.TabIndex = 52;
             // 
+            // buttonPaste
+            // 
+            this.buttonPaste.Location = new System.Drawing.Point(679, 704);
+            this.buttonPaste.Name = "buttonPaste";
+            this.buttonPaste.Size = new System.Drawing.Size(66, 23);
+            this.buttonPaste.TabIndex = 17;
+            this.buttonPaste.Text = "Paste Text";
+            this.buttonPaste.UseVisualStyleBackColor = true;
+            this.buttonPaste.Click += new System.EventHandler(this.buttonPaste_Click);
+            // 
+            // challengeInput
+            // 
+            this.challengeInput.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.challengeInput.FormattingEnabled = true;
+            this.challengeInput.Items.AddRange(new object[] {
+            "0",
+            "1/8",
+            "1/4",
+            "1/2",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30"});
+            this.challengeInput.Location = new System.Drawing.Point(77, 22);
+            this.challengeInput.Name = "challengeInput";
+            this.challengeInput.Size = new System.Drawing.Size(71, 21);
+            this.challengeInput.TabIndex = 52;
+            // 
             // Navigation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+<<<<<<< HEAD
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1253, 732);
             this.Controls.Add(this.actionsTab);
@@ -1256,6 +1321,12 @@
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.buttonPaste);
             this.Controls.Add(this.button1);
+=======
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1477, 732);
+            this.Controls.Add(this.buttonPaste);
+            this.Controls.Add(this.button1);
+>>>>>>> origin/TextParser
             this.Controls.Add(this.modifyButton);
             this.Controls.Add(this.populateButton);
             this.Controls.Add(this.clearButton);
@@ -1401,6 +1472,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupSense;
         private System.Windows.Forms.TextBox senseBox1;
@@ -1412,6 +1484,11 @@
         private System.Windows.Forms.Button buttonPaste;
         private System.Windows.Forms.ComboBox challengeInput;
 
+=======
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.Button buttonPaste;
+        private System.Windows.Forms.ComboBox challengeInput;
+>>>>>>> origin/TextParser
     }
 }
 
